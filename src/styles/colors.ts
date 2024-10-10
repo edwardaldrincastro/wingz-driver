@@ -15,6 +15,8 @@ export const colorBlack = {
 };
 
 export const colorBlue = {
+  _0: "#28295A",
+  // below are old
   _1: "#011122",
   _2: "#F3F9FF",
   // below are custom
@@ -45,6 +47,7 @@ export const colorGray = {
 };
 
 export const colorGreen = {
+  _0: "#65F2B3",
   // below are custom
   _1: "#028389",
   _2: "#029390",
