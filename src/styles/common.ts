@@ -28,6 +28,13 @@ export const flexGrow = { flexGrow: 1 } as const;
 export const flexNone = { flex: 0 } as const;
 export const flexShrink = { flexShrink: 1 } as const;
 
+export const absoluteFillObject = {
+  position: "absolute",
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+} as const;
 export const absolutePosition = { position: "absolute" } as const;
 export const underline = { textDecorationLine: "underline" } as const;
 

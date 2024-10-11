@@ -31,8 +31,12 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This is being used to access the maps</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string>This is being used to access the maps</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This is being used to access the maps</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
