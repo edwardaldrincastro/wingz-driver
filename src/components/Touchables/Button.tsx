@@ -6,6 +6,7 @@ import { CircleSnail } from "react-native-progress";
 import { IcoMoon } from "../../icons";
 import {
   border,
+  colorBlue,
   colorGray,
   colorGreen,
   colorTransparent,
@@ -15,7 +16,6 @@ import {
   fsCapitalize,
   sh16,
   sh52,
-  sw1,
   sw2,
   sw20,
   sw240,
@@ -61,11 +61,11 @@ export const CustomButton: FunctionComponent<CustomButtonProps> = ({
     [onPress],
   );
 
-  const disabledColor = disabled ? colorGreen._6 : colorGreen._1;
+  const disabledColor = disabled ? colorGreen._6 : colorBlue._0;
   const color = ((hover === true && secondary !== true) || loading === true) && disabled !== true ? colorGreen._4 : disabledColor;
 
   const defaultButtonStyle: ViewStyle = {
-    ...border(color, sw1),
+    ...border(color, sw2),
     ...flexRowCC,
     backgroundColor: secondary ? colorTransparent : color,
     height: sh52,

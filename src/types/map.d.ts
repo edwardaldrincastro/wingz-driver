@@ -11,6 +11,13 @@ declare interface Coordinates extends LatLng {
   longitudeDelta?: number;
 }
 
+declare interface Location {
+  destinationCoordinates: Coordinates;
+  destinationAddress: string;
+  pickUpCoordinates: Coordinates;
+  pickUpAddress: string;
+}
+
 declare interface RideDetails {
   username: string;
   profilePic: string;
@@ -36,8 +43,4 @@ declare interface RiderRequest {
   status: "pending" | "accepted" | "declined" | "started" | "picked-up" | "dropped-off"; // Status of the ride request
   pickupTime: Date; // Time when the ride is scheduled for pickup
   timestamp: Date; // Timestamp of when the ride request was made
-}
-
-declare interface TransformedRiderRequest extends RiderRequest {
-  marker: TypeMarker;
 }

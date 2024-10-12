@@ -9,5 +9,6 @@ export const CALENDAR_FORMAT = "YYYY-MM-DD";
 export const PARTIAL_FULL_DATE_FORMAT = "DD MMM YYYY";
 export const FULL_DATE_FORMAT = "DD MMMM YYYY";
 export const DAY_DATE_FORMAT = "ddd, DD MMM YYYY";
+export const DAY_DATE_TIME_FORMAT = "ddd, DD MMM YYYY h:mma";
 export const NRIC_DATE_FORMAT = "YYMMDD";
 export const NRIC_AGE_FORMAT = "YYYYMMDD";

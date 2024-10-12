@@ -1,25 +1,19 @@
-export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
+export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
   {
     id: "1",
     userId: "user123",
     driverId: null,
     pickupLocation: {
-      latitude: 14.599512,
-      longitude: 120.984222,
+      latitude: 14.5468,
+      longitude: 121.0543,
     },
     destination: {
       latitude: 14.601513,
-      longitude: 120.987656,
+      longitude: 120.9837,
     },
     status: "pending",
     pickupTime: new Date("2024-10-11T10:30:00"),
     timestamp: new Date("2024-10-11T09:00:00"),
-    marker: {
-      latlng: {
-        latitude: 14.599512,
-        longitude: 120.984222,
-      },
-    },
     details: {
       username: "Jordan",
       profilePic: "https://i.imgur.com/j7hDgpq.png",
@@ -33,8 +27,8 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     userId: "user456",
     driverId: "driver789",
     pickupLocation: {
-      latitude: 14.5984,
-      longitude: 120.9858,
+      latitude: 14.5555,
+      longitude: 121.0517,
     },
     destination: {
       latitude: 14.605,
@@ -43,12 +37,6 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     status: "accepted",
     pickupTime: new Date("2024-10-11T11:00:00"),
     timestamp: new Date("2024-10-11T09:30:00"),
-    marker: {
-      latlng: {
-        latitude: 14.5984,
-        longitude: 120.9858,
-      },
-    },
     details: {
       username: "Hernandez",
       profilePic: "https://i.imgur.com/HITxHyk.png",
@@ -62,8 +50,8 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     userId: "user789",
     driverId: null,
     pickupLocation: {
-      latitude: 14.599,
-      longitude: 120.9865,
+      latitude: 14.5565,
+      longitude: 121.0541,
     },
     destination: {
       latitude: 14.6078,
@@ -72,12 +60,6 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     status: "pending",
     pickupTime: new Date("2024-10-11T12:00:00"),
     timestamp: new Date("2024-10-11T10:00:00"),
-    marker: {
-      latlng: {
-        latitude: 14.599,
-        longitude: 120.9865,
-      },
-    },
     details: {
       username: "Sabrina",
       profilePic: "https://i.imgur.com/kIsfW43.png",
@@ -91,8 +73,8 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     userId: "user101",
     driverId: null,
     pickupLocation: {
-      latitude: 14.6,
-      longitude: 120.98,
+      latitude: 14.5507,
+      longitude: 121.0504,
     },
     destination: {
       latitude: 14.6055,
@@ -101,12 +83,6 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     status: "pending",
     pickupTime: new Date("2024-10-11T13:00:00"),
     timestamp: new Date("2024-10-11T11:30:00"),
-    marker: {
-      latlng: {
-        latitude: 14.6,
-        longitude: 120.98,
-      },
-    },
     details: {
       username: "Alex",
       profilePic: "https://i.imgur.com/9RXLpyk.png",
@@ -120,22 +96,16 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     userId: "user102",
     driverId: "driver790",
     pickupLocation: {
-      latitude: 14.601,
-      longitude: 120.981,
+      latitude: 14.5587,
+      longitude: 121.0529,
     },
     destination: {
-      latitude: 14.608,
-      longitude: 120.989,
+      latitude: 14.5558,
+      longitude: 121.05,
     },
     status: "accepted",
     pickupTime: new Date("2024-10-11T14:00:00"),
     timestamp: new Date("2024-10-11T12:00:00"),
-    marker: {
-      latlng: {
-        latitude: 14.601,
-        longitude: 120.981,
-      },
-    },
     details: {
       username: "Emma",
       profilePic: "https://i.imgur.com/tkXxyuT.png",
@@ -149,8 +119,8 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     userId: "user103",
     driverId: null,
     pickupLocation: {
-      latitude: 14.602,
-      longitude: 120.982,
+      latitude: 14.5544,
+      longitude: 121.0458,
     },
     destination: {
       latitude: 14.609,
@@ -159,12 +129,6 @@ export const SAMPLE_RIDER_REQUESTS: TransformedRiderRequest[] = [
     status: "pending",
     pickupTime: new Date("2024-10-11T15:00:00"),
     timestamp: new Date("2024-10-11T13:30:00"),
-    marker: {
-      latlng: {
-        latitude: 14.602,
-        longitude: 120.982,
-      },
-    },
     details: {
       username: "Michael",
       profilePic: "https://i.imgur.com/oZhK14E.png",
