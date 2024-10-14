@@ -12,13 +12,14 @@ export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
       longitude: 120.9837,
     },
     status: "pending",
-    pickupTime: new Date("2024-10-11T10:30:00"),
-    timestamp: new Date("2024-10-11T09:00:00"),
+    pickupTime: new Date("2024-10-14T10:30:00"), // future date
+    timestamp: new Date("2024-10-14T09:00:00"),
     details: {
       username: "Jordan",
       profilePic: "https://i.imgur.com/j7hDgpq.png",
       rate: "$20",
       distance: "1.6 mi",
+      duration: 900, // 15 minutes
       paymentMethod: "Applepay",
     },
   },
@@ -35,13 +36,14 @@ export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
       longitude: 120.9925,
     },
     status: "accepted",
-    pickupTime: new Date("2024-10-11T11:00:00"),
-    timestamp: new Date("2024-10-11T09:30:00"),
+    pickupTime: new Date("2024-10-14T10:45:00"), // future date
+    timestamp: new Date("2024-10-14T09:30:00"),
     details: {
       username: "Hernandez",
       profilePic: "https://i.imgur.com/HITxHyk.png",
       rate: "$20",
       distance: "1.6 mi",
+      duration: 1200, // 20 minutes
       paymentMethod: "Applepay",
     },
   },
@@ -54,17 +56,18 @@ export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
       longitude: 121.0541,
     },
     destination: {
-      latitude: 14.6078,
-      longitude: 120.9903,
+      latitude: 14.626,
+      longitude: 121.0838,
     },
     status: "pending",
-    pickupTime: new Date("2024-10-11T12:00:00"),
-    timestamp: new Date("2024-10-11T10:00:00"),
+    pickupTime: new Date("2024-10-14T12:00:00"), // future date
+    timestamp: new Date("2024-10-14T10:00:00"),
     details: {
       username: "Sabrina",
       profilePic: "https://i.imgur.com/kIsfW43.png",
       rate: "$20",
       distance: "1.6 mi",
+      duration: 1500, // 25 minutes
       paymentMethod: "Applepay",
     },
   },
@@ -81,13 +84,14 @@ export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
       longitude: 120.988,
     },
     status: "pending",
-    pickupTime: new Date("2024-10-11T13:00:00"),
-    timestamp: new Date("2024-10-11T11:30:00"),
+    pickupTime: new Date("2024-10-14T13:30:00"), // future date
+    timestamp: new Date("2024-10-14T11:30:00"),
     details: {
       username: "Alex",
       profilePic: "https://i.imgur.com/9RXLpyk.png",
       rate: "$25",
       distance: "1.6 mi",
+      duration: 1800, // 30 minutes
       paymentMethod: "PayPal",
     },
   },
@@ -104,13 +108,14 @@ export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
       longitude: 121.05,
     },
     status: "accepted",
-    pickupTime: new Date("2024-10-11T14:00:00"),
-    timestamp: new Date("2024-10-11T12:00:00"),
+    pickupTime: new Date("2024-10-14T14:30:00"), // future date
+    timestamp: new Date("2024-10-14T12:00:00"),
     details: {
       username: "Emma",
       profilePic: "https://i.imgur.com/tkXxyuT.png",
       rate: "$30",
       distance: "1.6 mi",
+      duration: 1200, // 20 minutes
       paymentMethod: "Credit Card",
     },
   },
@@ -123,17 +128,18 @@ export const SAMPLE_RIDER_REQUESTS: RiderRequest[] = [
       longitude: 121.0458,
     },
     destination: {
-      latitude: 14.609,
-      longitude: 120.99,
+      latitude: 14.1154,
+      longitude: 120.962,
     },
     status: "pending",
-    pickupTime: new Date("2024-10-11T15:00:00"),
-    timestamp: new Date("2024-10-11T13:30:00"),
+    pickupTime: new Date("2024-10-14T15:00:00"), // future date
+    timestamp: new Date("2024-10-14T13:30:00"),
     details: {
       username: "Michael",
       profilePic: "https://i.imgur.com/oZhK14E.png",
       rate: "$22",
       distance: "1.6 mi",
+      duration: 600, // 10 minutes
       paymentMethod: "Cash",
     },
   },

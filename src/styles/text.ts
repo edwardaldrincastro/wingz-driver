@@ -48,6 +48,7 @@ export const fs10RegBlack2: TextStyle = {
   fontSize: sh10,
   fontFamily: GalanoClassicRegular,
 };
+
 export const fs10RegGray16: TextStyle = {
   color: colorGray._16,
   fontSize: sh10,
@@ -65,8 +66,15 @@ export const fs12BoldGreen1: TextStyle = {
   fontSize: sh12,
   fontFamily: GalanoClassicBold,
 };
+
 export const fs12BoldGreen3: TextStyle = {
   color: colorGreen._3,
+  fontSize: sh12,
+  fontFamily: GalanoClassicBold,
+};
+
+export const fs12BoldWhite1: TextStyle = {
+  color: colorWhite._1,
   fontSize: sh12,
   fontFamily: GalanoClassicBold,
 };
@@ -124,8 +132,15 @@ export const fs12MedBlack3: TextStyle = {
   fontSize: sh12,
   fontFamily: GalanoClassicMedium,
 };
+
 export const fs12MedGray17: TextStyle = {
   color: colorGray._17,
+  fontSize: sh12,
+  fontFamily: GalanoClassicMedium,
+};
+
+export const fs12MedWhite1: TextStyle = {
+  color: colorGray._1,
   fontSize: sh12,
   fontFamily: GalanoClassicMedium,
 };

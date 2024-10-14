@@ -11,11 +11,16 @@ declare interface Coordinates extends LatLng {
   longitudeDelta?: number;
 }
 
+declare interface Delta {
+  latitudeDelta: number;
+  longitudeDelta: number;
+}
+
 declare interface Location {
   destinationCoordinates: Coordinates;
-  destinationAddress: string;
+  destinationAddress?: string;
   pickUpCoordinates: Coordinates;
-  pickUpAddress: string;
+  pickUpAddress?: string;
 }
 
 declare interface RideDetails {
@@ -23,6 +28,7 @@ declare interface RideDetails {
   profilePic: string;
   rate: string;
   distance: string;
+  duration: number;
   paymentMethod: string;
 }
 

@@ -20,7 +20,7 @@ import {
   RoundedButton,
 } from "../components";
 import { DAY_DATE_TIME_FORMAT, GOOGLE_PLACES_API_KEY } from "../constants";
-import { calculateDeltaFromMidpointMultiple, calculateMidpointMultiple, getCurrentLocation } from "../helpers";
+import { calculateDeltaFromMidpointMultiple, calculateMidpointMultiple, getTimeBeforePickup } from "../helpers";
 import {
   absolutePosition,
   circle,
@@ -35,6 +35,7 @@ import {
   fs14SemiBoldBlack3,
   fs16BoldBlack2,
   fs16MedBlack1,
+  fs16RegBlack1,
   fsAlignCenter,
   fsCapitalize,
   fullHW,
@@ -84,6 +85,7 @@ export const Home = () => {
   const [selectedRiderRequest, setSelectedRiderRequest] = useState<RiderRequest | undefined>(undefined);
   const [riderRequests, setRiderRequests] = useState<RiderRequest[]>([]);
   const [viewDetails, setViewDetails] = useState<boolean>(false);
+  const [accepted, setAccepted] = useState<boolean>(false);
   const [status, setStatus] = useState<boolean>(true);
   const navigation = useNavigation();
   const { bottom, top } = useSafeAreaInsets();
@@ -92,7 +94,8 @@ export const Home = () => {
   // const currentLocationLong = useRef(new Animated.Value(-122.4324)).current;
 
   const onRegionChange = (currentRegion: Region) => {
-    setRegion(currentRegion);
+    // console.log("onChange currentRegion", currentRegion);
+    // setRegion(currentRegion);
   };
 
   const moveToLocation = async (latitude: number, longitude: number, latitudeDelta = LATITUDE_DELTA, longitudeDelta = LONGITUDE_DELTA) => {
@@ -104,7 +107,7 @@ export const Home = () => {
           latitudeDelta: latitudeDelta,
           longitudeDelta: longitudeDelta,
         },
-        500,
+        1000,
       );
     }
   };
@@ -113,66 +116,65 @@ export const Home = () => {
     setSelectedRiderRequest(undefined);
     setRiderLocations(undefined);
     setViewDetails(false);
+    setAccepted(false);
+  };
+
+  const handleLater = () => {
+    handleDeclineRider();
+    // TODO for later
   };
 
   const handleRiderPress = async (request: RiderRequest) => {
-    console.log("request", request.userId);
     setSelectedRiderRequest(request);
-    const getDestinationLocation = await Geocoder.from(request.destination.latitude, request.destination.longitude);
-    const formattedDestination = getDestinationLocation.results[0].formatted_address;
-    // console.log("getDestinationLocation", JSON.stringify(getDestinationLocation));
 
     const driverRiderPickupCoords = [request.pickupLocation, currentLocation];
     const midpoint = calculateMidpointMultiple(driverRiderPickupCoords);
+
     // const dynamicDelta = calculateDeltaFromMidpointMultiple(driverRiderPickupCoords, midpoint, 1.1);
-    moveToLocation(midpoint.latitude, midpoint.longitude);
 
     moveToLocation(midpoint.latitude, midpoint.longitude);
-    console.log("formattedDestination", formattedDestination);
-    const getPickupLocation = await Geocoder.from(request.pickupLocation.latitude, request.pickupLocation.longitude);
-    const formattedPickUp = getPickupLocation.results[0].formatted_address;
-    // console.log("getPickupLocation", JSON.stringify(getPickupLocation));
-    console.log("formattedPickUp", formattedPickUp);
+
     setRiderLocations({
       destinationCoordinates: request.destination,
-      destinationAddress: formattedDestination,
       pickUpCoordinates: request.pickupLocation,
-      pickUpAddress: formattedPickUp,
     });
-
-    // setRegion({ ...region, ...midpoint });
   };
 
-  const handleViewDetails = () => {
+  const handleViewDetails = async () => {
     if (riderLocations) {
       setViewDetails(true);
+
+      const getDestinationLocation = await Geocoder.from(
+        riderLocations.destinationCoordinates.latitude,
+        riderLocations.destinationCoordinates.longitude,
+      );
+      const getPickUpLocation = await Geocoder.from(riderLocations.pickUpCoordinates.latitude, riderLocations.pickUpCoordinates.longitude);
+      const formattedDestination = getDestinationLocation.results[0].formatted_address;
+      const formattedPickUp = getPickUpLocation.results[0].formatted_address;
+
+      setRiderLocations((prevState) => ({
+        ...prevState!,
+        destinationAddress: formattedDestination,
+        pickUpAddress: formattedPickUp,
+      }));
+
       const driverRiderCoords = [currentLocation, riderLocations.destinationCoordinates, riderLocations.destinationCoordinates];
       const midpoint = calculateMidpointMultiple(driverRiderCoords);
-      // const newPointNorth = moveLatitude(midpoint, LATITUDE_DELTA / 5);
-      // const delta =  calculateDeltaFromMidpoint()
-
       const dynamicDelta = calculateDeltaFromMidpointMultiple(driverRiderCoords, midpoint, 2.1);
-      moveToLocation(midpoint.latitude, midpoint.longitude, dynamicDelta, dynamicDelta);
+
+      moveToLocation(midpoint.latitude - dynamicDelta * 0.5, midpoint.longitude, dynamicDelta, dynamicDelta);
     }
   };
 
-  const getLiveLocation = async () => {
-    const { latitude, longitude } = await getCurrentLocation();
-    setCurrentLocation({
-      latitude: latitude,
-      longitude: longitude,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA,
-    });
-  };
-
-  const onPressAddress = (details) => {
-    setRiderLocations({
-      latitude: details?.geometry?.location.lat,
-      longitude: details?.geometry?.location.lng,
-    });
-    moveToLocation(details?.geometry?.location.lat, details?.geometry?.location.lng);
-  };
+  // const getLiveLocation = async () => {
+  //   const { latitude, longitude } = await getCurrentLocation();
+  //   setCurrentLocation({
+  //     latitude: latitude,
+  //     longitude: longitude,
+  //     latitudeDelta: LATITUDE_DELTA,
+  //     longitudeDelta: LONGITUDE_DELTA,
+  //   });
+  // };
 
   // useEffect(() => {
   //   getLiveLocation();
@@ -211,6 +213,7 @@ export const Home = () => {
       {/* <View style={containerStyle}> */}
       <CustomMap
         ref={mapRef}
+        onRegionChange={onRegionChange}
         region={region}
         // onRegionChange={onRegionChange}
       >
@@ -286,18 +289,6 @@ export const Home = () => {
             textStyle={{ ...fs12BoldGray6, width: sw44 }}
           />
         </View>
-        {/* <GooglePlacesAutocomplete
-          placeholder="Search"
-          fetchDetails={true}
-          onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            onPressAddress(details);
-          }}
-          query={{
-            key: GOOGLE_PLACES_API_KEY,
-            language: "en",
-          }}
-        /> */}
       </View>
       <View
         style={{
@@ -328,61 +319,125 @@ export const Home = () => {
               borderRadius: sw16,
               marginHorizontal: sw24,
             }}>
-            <View style={rowCenterVertical}>
-              <CustomImage
-                source={{ uri: selectedRiderRequest.details.profilePic }}
-                style={{ width: sw56, height: sw56, borderRadius: sw8 }}
-              />
-              <CustomSpacer isHorizontal space={sw16} />
-              <View>
-                <Text style={fs16BoldBlack2}>{selectedRiderRequest.details.username}</Text>
-                <Text style={fs12RegBlack2}>{selectedRiderRequest.details.paymentMethod}</Text>
-              </View>
-              <CustomFlexSpacer />
-              <View>
+            {!accepted ? (
+              <>
                 <View style={rowCenterVertical}>
-                  <CustomSpacer isHorizontal space={sw4} />
-                  <Text style={fs12BoldGray6}>{selectedRiderRequest.details.rate}</Text>
-                </View>
-                <Text style={fs12RegGray11}>{selectedRiderRequest.details.distance}</Text>
-              </View>
-            </View>
-            <CustomSpacer space={sh24} />
-            <LabeledTitle
-              label="When"
-              labelStyle={fs12RegGray11}
-              spaceToLabel={sh4}
-              title={dayjs(selectedRiderRequest.pickupTime).format(DAY_DATE_TIME_FORMAT)}
-              titleStyle={fs14SemiBoldBlack3}
-            />
-            <CustomSpacer space={sh8} />
-            <LabeledTitle
-              label="Status"
-              labelStyle={fs12RegGray11}
-              spaceToLabel={sh4}
-              title={selectedRiderRequest.status}
-              titleStyle={{ ...fs12BoldGreen1, ...fsCapitalize }}
-            />
-
-            <CustomSpacer space={sh16} />
-            {viewDetails ? (
-              <View>
-                <Text style={fs12RegGray11}>Pick Up Location</Text>
-                <CustomSpacer space={sh4} />
-                <Text style={fs14SemiBoldBlack3}>{riderLocations?.pickUpAddress}</Text>
-                <CustomSpacer space={sh16} />
-                <Text style={fs12RegGray11}>Destination</Text>
-                <CustomSpacer space={sh4} />
-                <Text style={fs14SemiBoldBlack3}>{riderLocations?.destinationAddress}</Text>
-                <CustomSpacer space={sh16} />
-                <View style={rowCenterVertical}>
-                  <OutlineButton buttonStyle={flexChild} onPress={handleDeclineRider} text="Decline" />
+                  <CustomImage
+                    source={{ uri: selectedRiderRequest.details.profilePic }}
+                    style={{ width: sw56, height: sw56, borderRadius: sw8 }}
+                  />
                   <CustomSpacer isHorizontal space={sw16} />
-                  <RoundedButton buttonStyle={flexChild} onPress={() => navigation.navigate("Details")} text="Accept" />
+                  <View>
+                    <Text style={fs16BoldBlack2}>{selectedRiderRequest.details.username}</Text>
+                    <Text style={fs12RegBlack2}>{selectedRiderRequest.details.paymentMethod}</Text>
+                  </View>
+                  <CustomFlexSpacer />
+                  <View>
+                    <View style={rowCenterVertical}>
+                      <CustomSpacer isHorizontal space={sw4} />
+                      <Text style={fs12BoldGray6}>{selectedRiderRequest.details.rate}</Text>
+                    </View>
+                    <Text style={fs12RegGray11}>{selectedRiderRequest.details.distance}</Text>
+                  </View>
                 </View>
-              </View>
+                <CustomSpacer space={sh24} />
+                <LabeledTitle
+                  label="When"
+                  labelStyle={fs12RegGray11}
+                  title={dayjs(selectedRiderRequest.pickupTime).format(DAY_DATE_TIME_FORMAT)}
+                  titleStyle={fs14SemiBoldBlack3}
+                />
+                <CustomSpacer space={sh8} />
+                <LabeledTitle
+                  label="Status"
+                  labelStyle={fs12RegGray11}
+                  title={selectedRiderRequest.status}
+                  titleStyle={{ ...fs12BoldGreen1, ...fsCapitalize }}
+                />
+                {viewDetails ? (
+                  <View>
+                    <CustomSpacer space={sh8} />
+                    <LabeledTitle
+                      label="Pick Up Location"
+                      labelStyle={fs12RegGray11}
+                      title={riderLocations?.pickUpAddress || "-"}
+                      titleStyle={fs14SemiBoldBlack3}
+                    />
+                    <CustomSpacer space={sh8} />
+                    <LabeledTitle
+                      label="Destination"
+                      labelStyle={fs12RegGray11}
+                      title={riderLocations?.destinationAddress || "-"}
+                      titleStyle={fs14SemiBoldBlack3}
+                    />
+                    <CustomSpacer space={sh24} />
+                    <View style={rowCenterVertical}>
+                      <OutlineButton buttonStyle={flexChild} onPress={handleDeclineRider} text="Decline" />
+                      <CustomSpacer isHorizontal space={sw16} />
+                      <RoundedButton buttonStyle={flexChild} onPress={() => setAccepted(true)} text="Accept" />
+                    </View>
+                  </View>
+                ) : (
+                  <>
+                    <CustomSpacer space={sh24} />
+                    <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={handleViewDetails} text="View Details" />
+                  </>
+                )}
+              </>
             ) : (
-              <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={handleViewDetails} text="View Details" />
+              <>
+                {/* accepted and soon */}
+                <View>
+                  <LabeledTitle
+                    label="When"
+                    labelStyle={fs12RegGray11}
+                    title={dayjs(selectedRiderRequest.pickupTime).format(DAY_DATE_TIME_FORMAT)}
+                    titleStyle={fs14SemiBoldBlack3}
+                  />
+                  <CustomSpacer space={sh4} />
+                  <LabeledTitle
+                    label="Pick Up Location"
+                    labelStyle={fs12RegGray11}
+                    title={riderLocations?.pickUpAddress || "-"}
+                    titleStyle={fs14SemiBoldBlack3}
+                  />
+                  <CustomSpacer space={sh24} />
+                  <Text style={fs16RegBlack1}>
+                    This ride is scheduled in <Text style={fs16BoldBlack2}>{getTimeBeforePickup(selectedRiderRequest.pickupTime)}</Text>.
+                    You are
+                    <Text style={fs16BoldBlack2}> 20 mins</Text> away from pick up location. Ready to go now?
+                  </Text>
+                  <CustomSpacer space={sh24} />
+                  <View style={rowCenterVertical}>
+                    <OutlineButton buttonStyle={flexChild} onPress={handleLater} text="Later" />
+                    <CustomSpacer isHorizontal space={sw16} />
+                    <RoundedButton buttonStyle={flexChild} onPress={() => {}} text="Yes" />
+                  </View>
+                </View>
+                {/* accepted but in the future
+                <View>
+                  <LabeledTitle
+                    label="When"
+                    labelStyle={fs12RegGray11}
+                    title={dayjs(selectedRiderRequest.pickupTime).format(DAY_DATE_TIME_FORMAT)}
+                    titleStyle={fs14SemiBoldBlack3}
+                  />
+                  <CustomSpacer space={sh4} />
+                  <LabeledTitle
+                    label="Pick Up Location"
+                    labelStyle={fs12RegGray11}
+                    title={riderLocations?.pickUpAddress || "-"}
+                    titleStyle={fs14SemiBoldBlack3}
+                  />
+                  <CustomSpacer space={sh24} />
+                  <Text style={fs16RegBlack1}>
+                    This ride is scheduled in <Text style={fs16BoldBlack2}>{getTimeBeforePickup(selectedRiderRequest.pickupTime)}</Text>.
+                    We'll send you a reminder as the time approaches.
+                  </Text>
+                  <CustomSpacer space={sh24} />
+                  <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={() => {}} text="Got it" />
+                </View> */}
+              </>
             )}
           </View>
         )}
