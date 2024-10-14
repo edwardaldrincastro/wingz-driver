@@ -8,9 +8,9 @@ import {
   flexRow,
   fs10RegBlack2,
   fs12BoldGray6,
+  fs12RegGray11,
   fs14RegBlack1,
-  fs16BoldBlack2,
-  fs16RegGray6,
+  fs14SemiBoldBlack3,
   px,
   rowCenterVertical,
   sw05,
@@ -66,12 +66,12 @@ export const LabeledTitle: FunctionComponent<LabeledTitleProps> = ({
         <View style={flexRow}>
           {titlePrefix !== undefined ? (
             <Fragment>
-              <Text style={{ ...fs16RegGray6, ...titlePrefixStyle }}>{titlePrefix}</Text>
+              <Text style={{ ...fs12RegGray11, ...titlePrefixStyle }}>{titlePrefix}</Text>
               <CustomSpacer isHorizontal={true} space={sw4} />
             </Fragment>
           ) : null}
           {title !== undefined ? (
-            <Text style={{ ...fs16BoldBlack2, ...titleStyle }} numberOfLines={titleNumberOfLines}>
+            <Text style={{ ...fs14SemiBoldBlack3, ...titleStyle }} numberOfLines={titleNumberOfLines}>
               {title !== "" ? title : "-"}
             </Text>
           ) : null}

@@ -8,7 +8,6 @@ interface CustomMapProps extends MapViewProps {
   children: ReactNode;
 }
 
-// export const CustomMap: FunctionComponent<CustomMapProps> = ({ children, ...props }: CustomMapProps) => {
 export const CustomMap = forwardRef<MapView, CustomMapProps>(({ children, ...mapViewProps }, ref) => {
   return (
     <MapView.Animated
@@ -16,11 +15,7 @@ export const CustomMap = forwardRef<MapView, CustomMapProps>(({ children, ...map
       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
       style={absoluteFillObject}
       ref={ref}
-      {...mapViewProps}
-      // ref={mapRef}
-      // region={region}
-      // onRegionChange={onRegionChange}
-    >
+      {...mapViewProps}>
       {children}
     </MapView.Animated>
   );

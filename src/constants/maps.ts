@@ -1,4 +1,5 @@
 export const GOOGLE_PLACES_API_KEY = "AIzaSyBmmGuxkhcWRWfxJxkpf0NFUnC6aCEbTmA";
+
 export const customMapStyle = [
   {
     elementType: "geometry",
