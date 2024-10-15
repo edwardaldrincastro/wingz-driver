@@ -4,6 +4,101 @@ export const IcoMoonSelection = {
     {
       icon: {
         paths: [
+          "M884.363 475.611h-76.335c-8.499-65.81-38.498-126.949-85.314-173.871-46.817-46.924-107.817-76.993-173.478-85.51v-76.509c0-9.898-3.924-19.391-10.908-26.39-6.982-6.999-16.454-10.931-26.329-10.931s-19.347 3.932-26.329 10.931c-6.984 6.999-10.908 16.492-10.908 26.39v74.643c-65.937 8.608-127.146 38.947-173.996 86.241s-76.681 108.859-84.795 175.006h-76.336c-9.876 0-19.347 3.932-26.33 10.932-6.983 6.998-10.906 16.49-10.906 26.391 0 9.898 3.923 19.39 10.906 26.388 6.983 7 16.454 10.932 26.33 10.932h76.336c8.499 65.81 38.498 126.949 85.314 173.871 46.817 46.924 107.817 76.993 173.478 85.51v74.643c0 9.898 3.924 19.39 10.908 26.388 6.982 7 16.454 10.932 26.329 10.932s19.347-3.932 26.329-10.932c6.984-6.998 10.908-16.49 10.908-26.388v-72.778c65.937-8.608 127.146-38.947 173.996-86.241s76.681-108.859 84.795-175.006h76.335c9.875 0 19.347-3.932 26.331-10.932 6.982-6.998 10.906-16.49 10.906-26.388 0-9.9-3.924-19.393-10.906-26.391-6.984-7-16.456-10.932-26.331-10.932zM512 736.86c-44.188 0-87.384-13.134-124.125-37.738s-65.376-59.578-82.287-100.495c-16.91-40.917-21.334-85.942-12.714-129.378 8.622-43.438 29.899-83.339 61.145-114.655s71.055-52.644 114.393-61.284c43.34-8.641 88.263-4.207 129.085 12.743 40.825 16.949 75.719 45.65 100.268 82.475s37.652 80.118 37.652 124.408c0 59.388-23.54 116.345-65.438 158.339-41.9 41.994-98.726 65.587-157.981 65.587z",
+          "M512 643.557c71.977 0 130.327-58.483 130.327-130.623 0-72.143-58.35-130.626-130.327-130.626s-130.327 58.483-130.327 130.626c0 72.141 58.35 130.623 130.327 130.623z",
+        ],
+        attrs: [{}, {}],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["current_location"],
+      },
+      attrs: [{}, {}],
+      properties: {
+        order: 115,
+        id: 109,
+        name: "current_location",
+        prevSize: 32,
+        code: 59755,
+      },
+      setIdx: 0,
+      setId: 1,
+      iconIdx: 0,
+    },
+    {
+      icon: {
+        paths: [
+          "M499.71 167.94c169.662 0 307.2 137.538 307.2 307.2 0 104.919-57.205 190.777-117.473 252.4-33.065 33.804-68.223 61.536-98.191 82.493l-14.516 9.91c-2.337 1.556-4.628 3.066-6.873 4.526l-12.839 8.182-11.471 7.004-14.191 8.255c-19.771 11.164-43.52 11.164-63.291 0l-14.191-8.255-17.732-10.949c-2.142-1.364-4.336-2.777-6.578-4.237l-14.010-9.339c-31.472-21.475-69.749-50.969-105.57-87.591-60.269-61.622-117.473-147.481-117.473-252.4 0-169.662 137.538-307.2 307.2-307.2zM499.71 372.74c-56.556 0-102.4 45.847-102.4 102.4 0 56.556 45.844 102.4 102.4 102.4s102.4-45.844 102.4-102.4c0-56.553-45.844-102.4-102.4-102.4z",
+        ],
+        attrs: [],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["location"],
+        colorPermutations: {},
+      },
+      attrs: [],
+      properties: {
+        order: 114,
+        id: 108,
+        name: "location",
+        prevSize: 32,
+        code: 59756,
+      },
+      setIdx: 0,
+      setId: 1,
+      iconIdx: 1,
+    },
+    {
+      icon: {
+        paths: [
+          "M777.159 249.704c-12.462-7.69-26.704-12.024-41.337-12.577-14.635-0.551-29.164 2.695-42.17 9.427l-69.704 35.828c-5.364 2.748-11.305 4.182-17.332 4.182s-11.969-1.434-17.332-4.182l-132.792-68.129c-11.94-6.154-25.168-9.394-38.603-9.454h-0.756c-13.433 0.059-26.661 3.299-38.603 9.454l-108.655 55.777c-19.741 10.217-36.27 25.7-47.755 44.732-11.485 19.034-17.478 40.874-17.316 63.101v320.7c-0.102 15.196 3.723 30.161 11.106 43.444 7.381 13.283 18.067 24.435 31.025 32.375 12.458 7.7 26.702 12.038 41.337 12.591 14.637 0.551 29.166-2.701 42.17-9.439l69.704-35.766c5.366-2.75 11.305-4.184 17.332-4.184s11.969 1.434 17.332 4.184l132.698 68.129c11.889 6.144 25.063 9.384 38.445 9.454 0.166 0.082 0.35 0.127 0.535 0.127 0.186 0 0.371-0.045 0.537-0.127 13.382-0.070 26.556-3.31 38.445-9.454l108.655-55.777c19.741-10.217 36.27-25.7 47.755-44.732 11.485-19.034 17.478-40.874 17.316-63.103v-320.762c0.111-15.188-3.699-30.147-11.063-43.428-7.365-13.283-18.033-24.439-30.974-32.391zM308.857 735.435c-5.792 3.058-12.286 4.538-18.829 4.289-6.545-0.248-12.909-2.218-18.45-5.708-6.042-3.715-11.016-8.933-14.434-15.149-3.42-6.214-5.167-13.21-5.071-20.302v-320.7c-0.15-13.533 3.451-26.847 10.404-38.459 6.953-11.614 16.984-21.076 28.985-27.337l102.414-52.562v434.459c-5.286 1.401-10.426 3.312-15.346 5.704l-69.673 35.766zM456.522 699.668c-4.932-2.386-10.080-4.297-15.376-5.704v-434.459l126.427 64.913c4.932 2.388 10.082 4.297 15.376 5.704v434.461l-126.427-64.915zM772.022 646.097c0.174 13.556-3.416 26.894-10.369 38.533-6.955 11.639-17 21.121-29.020 27.39l-102.414 52.564v-434.461c5.286-1.401 10.426-3.312 15.346-5.704l69.673-35.766c5.792-3.058 12.286-4.538 18.829-4.289 6.545 0.248 12.909 2.218 18.45 5.708 6.042 3.715 11.016 8.935 14.436 15.149 3.418 6.214 5.165 13.21 5.069 20.302v320.573z",
+        ],
+        attrs: [],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["map"],
+        colorPermutations: {},
+      },
+      attrs: [],
+      properties: {
+        order: 116,
+        id: 107,
+        name: "map",
+        prevSize: 32,
+        code: 59757,
+      },
+      setIdx: 0,
+      setId: 1,
+      iconIdx: 2,
+    },
+    {
+      icon: {
+        paths: [
+          "M512 365.867c80.708 0 146.133 65.425 146.133 146.133s-65.425 146.133-146.133 146.133c-80.708 0-146.133-65.425-146.133-146.133s65.425-146.133 146.133-146.133zM512 224c159.058 0 288 128.942 288 288s-128.942 288-288 288c-159.058 0-288-128.942-288-288s128.942-288 288-288zM512 277.332c-129.604 0-234.668 105.064-234.668 234.668s105.064 234.668 234.668 234.668c129.602 0 234.668-105.064 234.668-234.668s-105.064-234.668-234.668-234.668z",
+        ],
+        attrs: [{}],
+        isMulticolor: false,
+        isMulticolor2: false,
+        grid: 0,
+        tags: ["origin"],
+      },
+      attrs: [{}],
+      properties: {
+        order: 112,
+        id: 106,
+        name: "origin",
+        prevSize: 32,
+        code: 59758,
+      },
+      setIdx: 0,
+      setId: 1,
+      iconIdx: 3,
+    },
+    {
+      icon: {
+        paths: [
           "M233.845 917.333c-34.951 0-64.885-12.459-89.803-37.376s-37.376-54.852-37.376-89.801c0-34.953 12.459-64.887 37.376-89.805s54.851-37.376 89.803-37.376c12.515 0 24.683 1.873 36.501 5.619 11.826 3.75 22.659 9.015 32.501 15.799l177.152-177.152v-150.571c-27.456-7.054-50.185-21.867-68.181-44.437-17.998-22.578-26.997-48.707-26.997-78.389 0-34.951 12.459-64.885 37.376-89.803 24.915-24.917 54.85-37.376 89.803-37.376s64.887 12.459 89.805 37.376c24.917 24.917 37.376 54.851 37.376 89.803 0 29.682-8.934 55.811-26.799 78.389-17.856 22.571-40.649 37.383-68.382 44.437v150.571l177.805 177.152c9.847-6.784 20.548-12.049 32.102-15.799 11.558-3.746 23.642-5.619 36.25-5.619 34.948 0 64.883 12.459 89.801 37.376s37.376 54.852 37.376 89.805c0 34.948-12.459 64.883-37.376 89.801s-54.852 37.376-89.801 37.376c-34.953 0-64.887-12.459-89.805-37.376s-37.376-54.852-37.376-89.801c0-10.624 1.259-20.954 3.776-30.989 2.517-10.027 6.208-19.418 11.072-28.169l-165.824-165.824-165.824 165.824c4.864 8.751 8.555 18.142 11.072 28.169 2.517 10.035 3.776 20.365 3.776 30.989 0 34.948-12.459 64.883-37.376 89.801s-54.851 37.376-89.803 37.376zM790.101 853.333c17.536 0 32.457-6.135 44.77-18.411 12.309-12.275 18.462-27.183 18.462-44.723 0-17.536-6.135-32.457-18.411-44.762-12.275-12.309-27.183-18.462-44.723-18.462-17.536 0-32.457 6.135-44.762 18.411-12.309 12.275-18.462 27.179-18.462 44.715s6.135 32.457 18.411 44.77c12.275 12.309 27.179 18.462 44.715 18.462zM511.949 297.024c17.54 0 32.465-6.137 44.766-18.411 12.309-12.274 18.466-27.179 18.466-44.715s-6.14-32.459-18.415-44.768c-12.271-12.309-27.179-18.464-44.71-18.464-17.545 0-32.469 6.137-44.77 18.411-12.309 12.274-18.466 27.182-18.466 44.725 0 17.536 6.14 32.455 18.415 44.757 12.271 12.309 27.179 18.464 44.715 18.464zM233.803 853.333c17.536 0 32.455-6.135 44.757-18.411 12.309-12.275 18.464-27.183 18.464-44.723 0-17.536-6.137-32.457-18.411-44.762-12.274-12.309-27.179-18.462-44.715-18.462s-32.459 6.135-44.768 18.411c-12.309 12.275-18.464 27.179-18.464 44.715s6.137 32.457 18.411 44.77c12.274 12.309 27.182 18.462 44.725 18.462z",
         ],
         attrs: [{}],
@@ -13,10 +108,16 @@ export const IcoMoonSelection = {
         tags: ["data-nodes"],
       },
       attrs: [{}],
-      properties: { order: 111, id: 105, name: "data-nodes", prevSize: 32, code: 59754 },
+      properties: {
+        order: 111,
+        id: 105,
+        name: "data-nodes",
+        prevSize: 32,
+        code: 59754,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 0,
+      iconIdx: 4,
     },
     {
       icon: {
@@ -30,10 +131,16 @@ export const IcoMoonSelection = {
         tags: ["exclamation-mark"],
       },
       attrs: [{}],
-      properties: { order: 109, id: 0, name: "exclamation-mark", prevSize: 32, code: 59753 },
+      properties: {
+        order: 109,
+        id: 0,
+        name: "exclamation-mark",
+        prevSize: 32,
+        code: 59753,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 1,
+      iconIdx: 5,
     },
     {
       icon: {
@@ -47,10 +154,16 @@ export const IcoMoonSelection = {
         tags: ["card-view"],
       },
       attrs: [{}],
-      properties: { order: 107, id: 104, name: "card-view", prevSize: 32, code: 59751 },
+      properties: {
+        order: 107,
+        id: 104,
+        name: "card-view",
+        prevSize: 32,
+        code: 59751,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 2,
+      iconIdx: 6,
     },
     {
       icon: {
@@ -64,10 +177,16 @@ export const IcoMoonSelection = {
         tags: ["list-view"],
       },
       attrs: [{}],
-      properties: { order: 106, id: 103, name: "list-view", prevSize: 32, code: 59752 },
+      properties: {
+        order: 106,
+        id: 103,
+        name: "list-view",
+        prevSize: 32,
+        code: 59752,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 3,
+      iconIdx: 7,
     },
     {
       icon: {
@@ -83,10 +202,16 @@ export const IcoMoonSelection = {
         colorPermutations: {},
       },
       attrs: [],
-      properties: { order: 105, id: 102, name: "import-image", prevSize: 32, code: 59750 },
+      properties: {
+        order: 105,
+        id: 102,
+        name: "import-image",
+        prevSize: 32,
+        code: 59750,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 4,
+      iconIdx: 8,
     },
     {
       icon: {
@@ -102,10 +227,16 @@ export const IcoMoonSelection = {
         colorPermutations: {},
       },
       attrs: [],
-      properties: { order: 104, id: 101, name: "flash-on", prevSize: 32, code: 59749 },
+      properties: {
+        order: 104,
+        id: 101,
+        name: "flash-on",
+        prevSize: 32,
+        code: 59749,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 5,
+      iconIdx: 9,
     },
     {
       icon: {
@@ -121,10 +252,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 5, id: 0, name: "flash", prevSize: 32, code: 59744 },
+      properties: {
+        order: 5,
+        id: 0,
+        name: "flash",
+        prevSize: 32,
+        code: 59744,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 6,
+      iconIdx: 10,
     },
     {
       icon: {
@@ -139,10 +276,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 3, id: 2, name: "flash-off", prevSize: 32, code: 59746 },
+      properties: {
+        order: 3,
+        id: 2,
+        name: "flash-off",
+        prevSize: 32,
+        code: 59746,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 7,
+      iconIdx: 11,
     },
     {
       icon: {
@@ -157,10 +300,16 @@ export const IcoMoonSelection = {
         tags: ["log-out"],
       },
       attrs: [{}, {}],
-      properties: { order: 5, id: 100, name: "log-out", prevSize: 32, code: 59747 },
+      properties: {
+        order: 5,
+        id: 100,
+        name: "log-out",
+        prevSize: 32,
+        code: 59747,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 8,
+      iconIdx: 12,
     },
     {
       icon: {
@@ -174,10 +323,16 @@ export const IcoMoonSelection = {
         tags: ["password"],
       },
       attrs: [{}],
-      properties: { order: 4, id: 99, name: "password", prevSize: 32, code: 59748 },
+      properties: {
+        order: 4,
+        id: 99,
+        name: "password",
+        prevSize: 32,
+        code: 59748,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 9,
+      iconIdx: 13,
     },
     {
       icon: {
@@ -195,10 +350,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 4, id: 1, name: "camera-flip", prevSize: 32, code: 59745 },
+      properties: {
+        order: 4,
+        id: 1,
+        name: "camera-flip",
+        prevSize: 32,
+        code: 59745,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 10,
+      iconIdx: 14,
     },
     {
       icon: {
@@ -214,10 +375,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 103, id: 3, name: "qr-code", prevSize: 32, code: 59696 },
+      properties: {
+        order: 103,
+        id: 3,
+        name: "qr-code",
+        prevSize: 32,
+        code: 59696,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 11,
+      iconIdx: 15,
     },
     {
       icon: {
@@ -232,10 +399,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}, {}],
-      properties: { order: 102, id: 4, name: "passport-outline", prevSize: 32, code: 59743 },
+      properties: {
+        order: 102,
+        id: 4,
+        name: "passport-outline",
+        prevSize: 32,
+        code: 59743,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 12,
+      iconIdx: 16,
     },
     {
       icon: {
@@ -250,10 +423,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 46, id: 5, name: "passport-filled", prevSize: 32, code: 59684 },
+      properties: {
+        order: 46,
+        id: 5,
+        name: "passport-filled",
+        prevSize: 32,
+        code: 59684,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 13,
+      iconIdx: 17,
     },
     {
       icon: {
@@ -269,10 +448,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 100, id: 6, name: "visibility-on", prevSize: 32, code: 59742 },
+      properties: {
+        order: 100,
+        id: 6,
+        name: "visibility-on",
+        prevSize: 32,
+        code: 59742,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 14,
+      iconIdx: 18,
     },
     {
       icon: {
@@ -287,10 +472,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 99, id: 7, name: "visibility-off", prevSize: 32, code: 59741 },
+      properties: {
+        order: 99,
+        id: 7,
+        name: "visibility-off",
+        prevSize: 32,
+        code: 59741,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 15,
+      iconIdx: 19,
     },
     {
       icon: {
@@ -307,10 +498,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 98, id: 8, name: "refresh", prevSize: 32, code: 59739 },
+      properties: {
+        order: 98,
+        id: 8,
+        name: "refresh",
+        prevSize: 32,
+        code: 59739,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 16,
+      iconIdx: 20,
     },
     {
       icon: {
@@ -326,10 +523,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 97, id: 9, name: "backspace-filled", prevSize: 32, code: 59740 },
+      properties: {
+        order: 97,
+        id: 9,
+        name: "backspace-filled",
+        prevSize: 32,
+        code: 59740,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 17,
+      iconIdx: 21,
     },
     {
       icon: {
@@ -347,10 +550,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 92, id: 10, name: "more", prevSize: 32, code: 59729 },
+      properties: {
+        order: 92,
+        id: 10,
+        name: "more",
+        prevSize: 32,
+        code: 59729,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 18,
+      iconIdx: 22,
     },
     {
       icon: {
@@ -365,10 +574,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 91, id: 11, name: "education", prevSize: 32, code: 59730 },
+      properties: {
+        order: 91,
+        id: 11,
+        name: "education",
+        prevSize: 32,
+        code: 59730,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 19,
+      iconIdx: 23,
     },
     {
       icon: {
@@ -383,10 +598,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 90, id: 12, name: "medical", prevSize: 32, code: 59731 },
+      properties: {
+        order: 90,
+        id: 12,
+        name: "medical",
+        prevSize: 32,
+        code: 59731,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 20,
+      iconIdx: 24,
     },
     {
       icon: {
@@ -401,10 +622,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 89, id: 13, name: "e-signature", prevSize: 32, code: 59732 },
+      properties: {
+        order: 89,
+        id: 13,
+        name: "e-signature",
+        prevSize: 32,
+        code: 59732,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 21,
+      iconIdx: 25,
     },
     {
       icon: {
@@ -419,10 +646,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 88, id: 14, name: "license", prevSize: 32, code: 59733 },
+      properties: {
+        order: 88,
+        id: 14,
+        name: "license",
+        prevSize: 32,
+        code: 59733,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 22,
+      iconIdx: 26,
     },
     {
       icon: {
@@ -437,10 +670,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 87, id: 15, name: "land", prevSize: 32, code: 59734 },
+      properties: {
+        order: 87,
+        id: 15,
+        name: "land",
+        prevSize: 32,
+        code: 59734,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 23,
+      iconIdx: 27,
     },
     {
       icon: {
@@ -455,10 +694,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 86, id: 16, name: "e-subsidy", prevSize: 32, code: 59735 },
+      properties: {
+        order: 86,
+        id: 16,
+        name: "e-subsidy",
+        prevSize: 32,
+        code: 59735,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 24,
+      iconIdx: 28,
     },
     {
       icon: {
@@ -473,10 +718,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 85, id: 17, name: "finance", prevSize: 32, code: 59736 },
+      properties: {
+        order: 85,
+        id: 17,
+        name: "finance",
+        prevSize: 32,
+        code: 59736,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 25,
+      iconIdx: 29,
     },
     {
       icon: {
@@ -491,10 +742,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 84, id: 18, name: "career", prevSize: 32, code: 59737 },
+      properties: {
+        order: 84,
+        id: 18,
+        name: "career",
+        prevSize: 32,
+        code: 59737,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 26,
+      iconIdx: 30,
     },
     {
       icon: {
@@ -509,10 +766,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [],
-      properties: { order: 83, id: 19, name: "documents", prevSize: 32, code: 59738 },
+      properties: {
+        order: 83,
+        id: 19,
+        name: "documents",
+        prevSize: 32,
+        code: 59738,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 27,
+      iconIdx: 31,
     },
     {
       icon: {
@@ -527,10 +790,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 82, id: 20, name: "camera", prevSize: 32, code: 59648 },
+      properties: {
+        order: 82,
+        id: 20,
+        name: "camera",
+        prevSize: 32,
+        code: 59648,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 28,
+      iconIdx: 32,
     },
     {
       icon: {
@@ -545,10 +814,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 81, id: 21, name: "export", prevSize: 32, code: 59649 },
+      properties: {
+        order: 81,
+        id: 21,
+        name: "export",
+        prevSize: 32,
+        code: 59649,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 29,
+      iconIdx: 33,
     },
     {
       icon: {
@@ -563,10 +838,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 80, id: 22, name: "download", prevSize: 32, code: 59650 },
+      properties: {
+        order: 80,
+        id: 22,
+        name: "download",
+        prevSize: 32,
+        code: 59650,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 30,
+      iconIdx: 34,
     },
     {
       icon: {
@@ -581,10 +862,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 79, id: 23, name: "check", prevSize: 32, code: 59651 },
+      properties: {
+        order: 79,
+        id: 23,
+        name: "check",
+        prevSize: 32,
+        code: 59651,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 31,
+      iconIdx: 35,
     },
     {
       icon: {
@@ -599,10 +886,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 78, id: 24, name: "loading", prevSize: 32, code: 59652 },
+      properties: {
+        order: 78,
+        id: 24,
+        name: "loading",
+        prevSize: 32,
+        code: 59652,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 32,
+      iconIdx: 36,
     },
     {
       icon: {
@@ -617,10 +910,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 77, id: 25, name: "search", prevSize: 32, code: 59653 },
+      properties: {
+        order: 77,
+        id: 25,
+        name: "search",
+        prevSize: 32,
+        code: 59653,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 33,
+      iconIdx: 37,
     },
     {
       icon: {
@@ -635,10 +934,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 76, id: 26, name: "password1", prevSize: 32, code: 59654 },
+      properties: {
+        order: 76,
+        id: 26,
+        name: "password1",
+        prevSize: 32,
+        code: 59654,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 34,
+      iconIdx: 38,
     },
     {
       icon: {
@@ -653,10 +958,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 75, id: 27, name: "id-outline", prevSize: 32, code: 59655 },
+      properties: {
+        order: 75,
+        id: 27,
+        name: "id-outline",
+        prevSize: 32,
+        code: 59655,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 35,
+      iconIdx: 39,
     },
     {
       icon: {
@@ -671,10 +982,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 74, id: 28, name: "id-filled", prevSize: 32, code: 59656 },
+      properties: {
+        order: 74,
+        id: 28,
+        name: "id-filled",
+        prevSize: 32,
+        code: 59656,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 36,
+      iconIdx: 40,
     },
     {
       icon: {
@@ -689,10 +1006,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 73, id: 29, name: "warning-outline", prevSize: 32, code: 59657 },
+      properties: {
+        order: 73,
+        id: 29,
+        name: "warning-outline",
+        prevSize: 32,
+        code: 59657,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 37,
+      iconIdx: 41,
     },
     {
       icon: {
@@ -707,10 +1030,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 72, id: 30, name: "warning-filled", prevSize: 32, code: 59658 },
+      properties: {
+        order: 72,
+        id: 30,
+        name: "warning-filled",
+        prevSize: 32,
+        code: 59658,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 38,
+      iconIdx: 42,
     },
     {
       icon: {
@@ -725,10 +1054,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 71, id: 31, name: "check-box-outline", prevSize: 32, code: 59659 },
+      properties: {
+        order: 71,
+        id: 31,
+        name: "check-box-outline",
+        prevSize: 32,
+        code: 59659,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 39,
+      iconIdx: 43,
     },
     {
       icon: {
@@ -743,10 +1078,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 70, id: 32, name: "check-box-filled", prevSize: 32, code: 59660 },
+      properties: {
+        order: 70,
+        id: 32,
+        name: "check-box-filled",
+        prevSize: 32,
+        code: 59660,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 40,
+      iconIdx: 44,
     },
     {
       icon: {
@@ -761,10 +1102,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 69, id: 33, name: "check-outline", prevSize: 32, code: 59661 },
+      properties: {
+        order: 69,
+        id: 33,
+        name: "check-outline",
+        prevSize: 32,
+        code: 59661,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 41,
+      iconIdx: 45,
     },
     {
       icon: {
@@ -779,10 +1126,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 68, id: 34, name: "check-filled", prevSize: 32, code: 59662 },
+      properties: {
+        order: 68,
+        id: 34,
+        name: "check-filled",
+        prevSize: 32,
+        code: 59662,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 42,
+      iconIdx: 46,
     },
     {
       icon: {
@@ -797,10 +1150,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 67, id: 35, name: "notification-outline", prevSize: 32, code: 59663 },
+      properties: {
+        order: 67,
+        id: 35,
+        name: "notification-outline",
+        prevSize: 32,
+        code: 59663,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 43,
+      iconIdx: 47,
     },
     {
       icon: {
@@ -815,10 +1174,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 66, id: 36, name: "notification-filled", prevSize: 32, code: 59664 },
+      properties: {
+        order: 66,
+        id: 36,
+        name: "notification-filled",
+        prevSize: 32,
+        code: 59664,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 44,
+      iconIdx: 48,
     },
     {
       icon: {
@@ -833,10 +1198,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 65, id: 37, name: "user-circle-outline", prevSize: 32, code: 59665 },
+      properties: {
+        order: 65,
+        id: 37,
+        name: "user-circle-outline",
+        prevSize: 32,
+        code: 59665,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 45,
+      iconIdx: 49,
     },
     {
       icon: {
@@ -851,10 +1222,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 64, id: 38, name: "user-circle-filled", prevSize: 32, code: 59666 },
+      properties: {
+        order: 64,
+        id: 38,
+        name: "user-circle-filled",
+        prevSize: 32,
+        code: 59666,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 46,
+      iconIdx: 50,
     },
     {
       icon: {
@@ -869,10 +1246,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 63, id: 39, name: "user-outline", prevSize: 32, code: 59667 },
+      properties: {
+        order: 63,
+        id: 39,
+        name: "user-outline",
+        prevSize: 32,
+        code: 59667,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 47,
+      iconIdx: 51,
     },
     {
       icon: {
@@ -887,10 +1270,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 62, id: 40, name: "user-filled", prevSize: 32, code: 59668 },
+      properties: {
+        order: 62,
+        id: 40,
+        name: "user-filled",
+        prevSize: 32,
+        code: 59668,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 48,
+      iconIdx: 52,
     },
     {
       icon: {
@@ -905,10 +1294,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 61, id: 41, name: "add-box-outline", prevSize: 32, code: 59669 },
+      properties: {
+        order: 61,
+        id: 41,
+        name: "add-box-outline",
+        prevSize: 32,
+        code: 59669,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 49,
+      iconIdx: 53,
     },
     {
       icon: {
@@ -923,10 +1318,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 60, id: 42, name: "add-box-filled", prevSize: 32, code: 59670 },
+      properties: {
+        order: 60,
+        id: 42,
+        name: "add-box-filled",
+        prevSize: 32,
+        code: 59670,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 50,
+      iconIdx: 54,
     },
     {
       icon: {
@@ -941,10 +1342,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 59, id: 43, name: "add-circle", prevSize: 32, code: 59671 },
+      properties: {
+        order: 59,
+        id: 43,
+        name: "add-circle",
+        prevSize: 32,
+        code: 59671,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 51,
+      iconIdx: 55,
     },
     {
       icon: {
@@ -959,10 +1366,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 58, id: 44, name: "add", prevSize: 32, code: 59672 },
+      properties: {
+        order: 58,
+        id: 44,
+        name: "add",
+        prevSize: 32,
+        code: 59672,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 52,
+      iconIdx: 56,
     },
     {
       icon: {
@@ -977,10 +1390,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 57, id: 45, name: "star-outline", prevSize: 32, code: 59673 },
+      properties: {
+        order: 57,
+        id: 45,
+        name: "star-outline",
+        prevSize: 32,
+        code: 59673,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 53,
+      iconIdx: 57,
     },
     {
       icon: {
@@ -995,10 +1414,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 56, id: 46, name: "star-filled", prevSize: 32, code: 59674 },
+      properties: {
+        order: 56,
+        id: 46,
+        name: "star-filled",
+        prevSize: 32,
+        code: 59674,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 54,
+      iconIdx: 58,
     },
     {
       icon: {
@@ -1013,10 +1438,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 55, id: 47, name: "favourite-filled", prevSize: 32, code: 59675 },
+      properties: {
+        order: 55,
+        id: 47,
+        name: "favourite-filled",
+        prevSize: 32,
+        code: 59675,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 55,
+      iconIdx: 59,
     },
     {
       icon: {
@@ -1031,10 +1462,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 54, id: 48, name: "favourite-outline", prevSize: 32, code: 59676 },
+      properties: {
+        order: 54,
+        id: 48,
+        name: "favourite-outline",
+        prevSize: 32,
+        code: 59676,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 56,
+      iconIdx: 60,
     },
     {
       icon: {
@@ -1049,10 +1486,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 53, id: 49, name: "more-vertical", prevSize: 32, code: 59677 },
+      properties: {
+        order: 53,
+        id: 49,
+        name: "more-vertical",
+        prevSize: 32,
+        code: 59677,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 57,
+      iconIdx: 61,
     },
     {
       icon: {
@@ -1067,10 +1510,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 52, id: 50, name: "more-horizontal", prevSize: 32, code: 59678 },
+      properties: {
+        order: 52,
+        id: 50,
+        name: "more-horizontal",
+        prevSize: 32,
+        code: 59678,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 58,
+      iconIdx: 62,
     },
     {
       icon: {
@@ -1085,10 +1534,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 51, id: 51, name: "help-outline", prevSize: 32, code: 59679 },
+      properties: {
+        order: 51,
+        id: 51,
+        name: "help-outline",
+        prevSize: 32,
+        code: 59679,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 59,
+      iconIdx: 63,
     },
     {
       icon: {
@@ -1103,10 +1558,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 50, id: 52, name: "help-filled", prevSize: 32, code: 59680 },
+      properties: {
+        order: 50,
+        id: 52,
+        name: "help-filled",
+        prevSize: 32,
+        code: 59680,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 60,
+      iconIdx: 64,
     },
     {
       icon: {
@@ -1121,10 +1582,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 49, id: 53, name: "wallet", prevSize: 32, code: 59681 },
+      properties: {
+        order: 49,
+        id: 53,
+        name: "wallet",
+        prevSize: 32,
+        code: 59681,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 61,
+      iconIdx: 65,
     },
     {
       icon: {
@@ -1139,10 +1606,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 48, id: 54, name: "info-outline", prevSize: 32, code: 59682 },
+      properties: {
+        order: 48,
+        id: 54,
+        name: "info-outline",
+        prevSize: 32,
+        code: 59682,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 62,
+      iconIdx: 66,
     },
     {
       icon: {
@@ -1157,10 +1630,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 47, id: 55, name: "info-filled", prevSize: 32, code: 59683 },
+      properties: {
+        order: 47,
+        id: 55,
+        name: "info-filled",
+        prevSize: 32,
+        code: 59683,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 63,
+      iconIdx: 67,
     },
     {
       icon: {
@@ -1175,10 +1654,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 45, id: 56, name: "delete-outline", prevSize: 32, code: 59685 },
+      properties: {
+        order: 45,
+        id: 56,
+        name: "delete-outline",
+        prevSize: 32,
+        code: 59685,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 64,
+      iconIdx: 68,
     },
     {
       icon: {
@@ -1193,10 +1678,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 44, id: 57, name: "delete-filled", prevSize: 32, code: 59686 },
+      properties: {
+        order: 44,
+        id: 57,
+        name: "delete-filled",
+        prevSize: 32,
+        code: 59686,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 65,
+      iconIdx: 69,
     },
     {
       icon: {
@@ -1211,10 +1702,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 43, id: 58, name: "upload-outline", prevSize: 32, code: 59687 },
+      properties: {
+        order: 43,
+        id: 58,
+        name: "upload-outline",
+        prevSize: 32,
+        code: 59687,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 66,
+      iconIdx: 70,
     },
     {
       icon: {
@@ -1229,10 +1726,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 42, id: 59, name: "upload-filled", prevSize: 32, code: 59688 },
+      properties: {
+        order: 42,
+        id: 59,
+        name: "upload-filled",
+        prevSize: 32,
+        code: 59688,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 67,
+      iconIdx: 71,
     },
     {
       icon: {
@@ -1247,10 +1750,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 41, id: 60, name: "campaign-outline", prevSize: 32, code: 59689 },
+      properties: {
+        order: 41,
+        id: 60,
+        name: "campaign-outline",
+        prevSize: 32,
+        code: 59689,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 68,
+      iconIdx: 72,
     },
     {
       icon: {
@@ -1265,10 +1774,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 40, id: 61, name: "campaign-filled", prevSize: 32, code: 59690 },
+      properties: {
+        order: 40,
+        id: 61,
+        name: "campaign-filled",
+        prevSize: 32,
+        code: 59690,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 69,
+      iconIdx: 73,
     },
     {
       icon: {
@@ -1283,10 +1798,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 3, id: 62, name: "edit-outline", prevSize: 32, code: 59691 },
+      properties: {
+        order: 3,
+        id: 62,
+        name: "edit-outline",
+        prevSize: 32,
+        code: 59691,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 70,
+      iconIdx: 74,
     },
     {
       icon: {
@@ -1301,10 +1822,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 38, id: 63, name: "edit-filled", prevSize: 32, code: 59692 },
+      properties: {
+        order: 38,
+        id: 63,
+        name: "edit-filled",
+        prevSize: 32,
+        code: 59692,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 71,
+      iconIdx: 75,
     },
     {
       icon: {
@@ -1319,10 +1846,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 37, id: 64, name: "lock-outline", prevSize: 32, code: 59693 },
+      properties: {
+        order: 37,
+        id: 64,
+        name: "lock-outline",
+        prevSize: 32,
+        code: 59693,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 72,
+      iconIdx: 76,
     },
     {
       icon: {
@@ -1337,10 +1870,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 36, id: 65, name: "lock-filled", prevSize: 32, code: 59694 },
+      properties: {
+        order: 36,
+        id: 65,
+        name: "lock-filled",
+        prevSize: 32,
+        code: 59694,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 73,
+      iconIdx: 77,
     },
     {
       icon: {
@@ -1355,10 +1894,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 35, id: 66, name: "qr-code-scanner", prevSize: 32, code: 59695 },
+      properties: {
+        order: 35,
+        id: 66,
+        name: "qr-code-scanner",
+        prevSize: 32,
+        code: 59695,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 74,
+      iconIdx: 78,
     },
     {
       icon: {
@@ -1373,10 +1918,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 33, id: 67, name: "sign-outline", prevSize: 32, code: 59697 },
+      properties: {
+        order: 33,
+        id: 67,
+        name: "sign-outline",
+        prevSize: 32,
+        code: 59697,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 75,
+      iconIdx: 79,
     },
     {
       icon: {
@@ -1391,10 +1942,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 32, id: 68, name: "sign-filled", prevSize: 32, code: 59698 },
+      properties: {
+        order: 32,
+        id: 68,
+        name: "sign-filled",
+        prevSize: 32,
+        code: 59698,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 76,
+      iconIdx: 80,
     },
     {
       icon: {
@@ -1409,10 +1966,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 31, id: 69, name: "car-outline", prevSize: 32, code: 59699 },
+      properties: {
+        order: 31,
+        id: 69,
+        name: "car-outline",
+        prevSize: 32,
+        code: 59699,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 77,
+      iconIdx: 81,
     },
     {
       icon: {
@@ -1427,10 +1990,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 30, id: 70, name: "car-filled", prevSize: 32, code: 59700 },
+      properties: {
+        order: 30,
+        id: 70,
+        name: "car-filled",
+        prevSize: 32,
+        code: 59700,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 78,
+      iconIdx: 82,
     },
     {
       icon: {
@@ -1445,10 +2014,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 29, id: 71, name: "close", prevSize: 32, code: 59701 },
+      properties: {
+        order: 29,
+        id: 71,
+        name: "close",
+        prevSize: 32,
+        code: 59701,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 79,
+      iconIdx: 83,
     },
     {
       icon: {
@@ -1463,10 +2038,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 28, id: 72, name: "close-circle-filled", prevSize: 32, code: 59702 },
+      properties: {
+        order: 28,
+        id: 72,
+        name: "close-circle-filled",
+        prevSize: 32,
+        code: 59702,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 80,
+      iconIdx: 84,
     },
     {
       icon: {
@@ -1481,10 +2062,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 27, id: 73, name: "land-outline", prevSize: 32, code: 59703 },
+      properties: {
+        order: 27,
+        id: 73,
+        name: "land-outline",
+        prevSize: 32,
+        code: 59703,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 81,
+      iconIdx: 85,
     },
     {
       icon: {
@@ -1499,10 +2086,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 26, id: 74, name: "land-filled", prevSize: 32, code: 59704 },
+      properties: {
+        order: 26,
+        id: 74,
+        name: "land-filled",
+        prevSize: 32,
+        code: 59704,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 82,
+      iconIdx: 86,
     },
     {
       icon: {
@@ -1517,10 +2110,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 7, id: 75, name: "settings-outline", prevSize: 32, code: 59705 },
+      properties: {
+        order: 7,
+        id: 75,
+        name: "settings-outline",
+        prevSize: 32,
+        code: 59705,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 83,
+      iconIdx: 87,
     },
     {
       icon: {
@@ -1535,10 +2134,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 8, id: 76, name: "settings-filled", prevSize: 32, code: 59706 },
+      properties: {
+        order: 8,
+        id: 76,
+        name: "settings-filled",
+        prevSize: 32,
+        code: 59706,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 84,
+      iconIdx: 88,
     },
     {
       icon: {
@@ -1553,10 +2158,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 9, id: 77, name: "medical-outline", prevSize: 32, code: 59707 },
+      properties: {
+        order: 9,
+        id: 77,
+        name: "medical-outline",
+        prevSize: 32,
+        code: 59707,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 85,
+      iconIdx: 89,
     },
     {
       icon: {
@@ -1571,10 +2182,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 10, id: 78, name: "medical-filled", prevSize: 32, code: 59708 },
+      properties: {
+        order: 10,
+        id: 78,
+        name: "medical-filled",
+        prevSize: 32,
+        code: 59708,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 86,
+      iconIdx: 90,
     },
     {
       icon: {
@@ -1589,10 +2206,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 11, id: 79, name: "gas-outline", prevSize: 32, code: 59709 },
+      properties: {
+        order: 11,
+        id: 79,
+        name: "gas-outline",
+        prevSize: 32,
+        code: 59709,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 87,
+      iconIdx: 91,
     },
     {
       icon: {
@@ -1607,10 +2230,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 12, id: 80, name: "gas-filled", prevSize: 32, code: 59710 },
+      properties: {
+        order: 12,
+        id: 80,
+        name: "gas-filled",
+        prevSize: 32,
+        code: 59710,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 88,
+      iconIdx: 92,
     },
     {
       icon: {
@@ -1625,10 +2254,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 13, id: 81, name: "career-outline", prevSize: 32, code: 59711 },
+      properties: {
+        order: 13,
+        id: 81,
+        name: "career-outline",
+        prevSize: 32,
+        code: 59711,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 89,
+      iconIdx: 93,
     },
     {
       icon: {
@@ -1643,10 +2278,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 14, id: 82, name: "career-filled", prevSize: 32, code: 59712 },
+      properties: {
+        order: 14,
+        id: 82,
+        name: "career-filled",
+        prevSize: 32,
+        code: 59712,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 90,
+      iconIdx: 94,
     },
     {
       icon: {
@@ -1661,10 +2302,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 15, id: 83, name: "document-outline", prevSize: 32, code: 59713 },
+      properties: {
+        order: 15,
+        id: 83,
+        name: "document-outline",
+        prevSize: 32,
+        code: 59713,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 91,
+      iconIdx: 95,
     },
     {
       icon: {
@@ -1679,10 +2326,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 16, id: 84, name: "document-filled", prevSize: 32, code: 59714 },
+      properties: {
+        order: 16,
+        id: 84,
+        name: "document-filled",
+        prevSize: 32,
+        code: 59714,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 92,
+      iconIdx: 96,
     },
     {
       icon: {
@@ -1697,10 +2350,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 17, id: 85, name: "share-outline", prevSize: 32, code: 59715 },
+      properties: {
+        order: 17,
+        id: 85,
+        name: "share-outline",
+        prevSize: 32,
+        code: 59715,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 93,
+      iconIdx: 97,
     },
     {
       icon: {
@@ -1715,10 +2374,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 18, id: 86, name: "share-filled", prevSize: 32, code: 59716 },
+      properties: {
+        order: 18,
+        id: 86,
+        name: "share-filled",
+        prevSize: 32,
+        code: 59716,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 94,
+      iconIdx: 98,
     },
     {
       icon: {
@@ -1733,10 +2398,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 19, id: 87, name: "education-outline", prevSize: 32, code: 59717 },
+      properties: {
+        order: 19,
+        id: 87,
+        name: "education-outline",
+        prevSize: 32,
+        code: 59717,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 95,
+      iconIdx: 99,
     },
     {
       icon: {
@@ -1751,10 +2422,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 20, id: 88, name: "education-filled", prevSize: 32, code: 59718 },
+      properties: {
+        order: 20,
+        id: 88,
+        name: "education-filled",
+        prevSize: 32,
+        code: 59718,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 96,
+      iconIdx: 100,
     },
     {
       icon: {
@@ -1769,10 +2446,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 21, id: 89, name: "expand-circle-down-outline", prevSize: 32, code: 59719 },
+      properties: {
+        order: 21,
+        id: 89,
+        name: "expand-circle-down-outline",
+        prevSize: 32,
+        code: 59719,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 97,
+      iconIdx: 101,
     },
     {
       icon: {
@@ -1787,10 +2470,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 22, id: 90, name: "expand-circle-down-filled", prevSize: 32, code: 59720 },
+      properties: {
+        order: 22,
+        id: 90,
+        name: "expand-circle-down-filled",
+        prevSize: 32,
+        code: 59720,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 98,
+      iconIdx: 102,
     },
     {
       icon: {
@@ -1805,10 +2494,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 23, id: 91, name: "expand-down", prevSize: 32, code: 59721 },
+      properties: {
+        order: 23,
+        id: 91,
+        name: "expand-down",
+        prevSize: 32,
+        code: 59721,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 99,
+      iconIdx: 103,
     },
     {
       icon: {
@@ -1823,10 +2518,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 24, id: 92, name: "expand-up", prevSize: 32, code: 59722 },
+      properties: {
+        order: 24,
+        id: 92,
+        name: "expand-up",
+        prevSize: 32,
+        code: 59722,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 100,
+      iconIdx: 104,
     },
     {
       icon: {
@@ -1841,10 +2542,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 25, id: 93, name: "chevron-left", prevSize: 32, code: 59723 },
+      properties: {
+        order: 25,
+        id: 93,
+        name: "chevron-left",
+        prevSize: 32,
+        code: 59723,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 101,
+      iconIdx: 105,
     },
     {
       icon: {
@@ -1859,10 +2566,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 6, id: 94, name: "chevron-right", prevSize: 32, code: 59724 },
+      properties: {
+        order: 6,
+        id: 94,
+        name: "chevron-right",
+        prevSize: 32,
+        code: 59724,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 102,
+      iconIdx: 106,
     },
     {
       icon: {
@@ -1877,10 +2590,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 5, id: 95, name: "arrow-left", prevSize: 32, code: 59725 },
+      properties: {
+        order: 5,
+        id: 95,
+        name: "arrow-left",
+        prevSize: 32,
+        code: 59725,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 103,
+      iconIdx: 107,
     },
     {
       icon: {
@@ -1895,10 +2614,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 4, id: 96, name: "arrow-right", prevSize: 32, code: 59726 },
+      properties: {
+        order: 4,
+        id: 96,
+        name: "arrow-right",
+        prevSize: 32,
+        code: 59726,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 104,
+      iconIdx: 108,
     },
     {
       icon: {
@@ -1913,10 +2638,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 3, id: 97, name: "home-outline", prevSize: 32, code: 59727 },
+      properties: {
+        order: 3,
+        id: 97,
+        name: "home-outline",
+        prevSize: 32,
+        code: 59727,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 105,
+      iconIdx: 109,
     },
     {
       icon: {
@@ -1931,10 +2662,16 @@ export const IcoMoonSelection = {
         grid: 0,
       },
       attrs: [{}],
-      properties: { order: 2, id: 98, name: "home-filled", prevSize: 32, code: 59728 },
+      properties: {
+        order: 2,
+        id: 98,
+        name: "home-filled",
+        prevSize: 32,
+        code: 59728,
+      },
       setIdx: 0,
       setId: 1,
-      iconIdx: 106,
+      iconIdx: 110,
     },
   ],
   height: 1024,
@@ -1951,7 +2688,15 @@ export const IcoMoonSelection = {
       metrics: { emSize: 1024, baseline: 6.25, whitespace: 50 },
       embed: false,
     },
-    imagePref: { prefix: "icon-", png: true, useClassSelector: true, color: 0, bgColor: 16777215, name: "icomoon", classSelector: ".icon" },
+    imagePref: {
+      prefix: "icon-",
+      png: true,
+      useClassSelector: true,
+      color: 0,
+      bgColor: 16777215,
+      name: "icomoon",
+      classSelector: ".icon",
+    },
     historySize: 50,
     gridSize: 16,
   },

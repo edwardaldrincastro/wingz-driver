@@ -1,72 +1,34 @@
-import React, { Fragment } from "react";
-import { TextStyle, View, ViewStyle } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { View, ViewStyle } from "react-native";
 
 import { Language } from "../../constants";
-import { flexRow, sw8 } from "../../styles";
-import { RoundedButton } from "../Touchables/RoundedButton";
+import { flexChild, flexRow, sw16 } from "../../styles";
+import { RoundedButton, RoundedButtonProps } from "../Touchables/RoundedButton";
 import { CustomSpacer } from "./Spacer";
 
-const { ACTION_BUTTONS } = Language.PAGE;
+const { ACTION_BUTTONS } = Language.COMPONENTS;
+
+export interface ActionButton extends Omit<RoundedButtonProps, "text"> {
+  text?: string;
+}
 
 export interface ActionButtonsProps {
   buttonContainerStyle?: ViewStyle;
-  cancelButtonStyle?: ViewStyle;
-  cancelDisabled?: boolean;
-  cancelTextStyle?: TextStyle;
-  continueButtonStyle?: ViewStyle;
-  continueDebounce?: boolean;
-  continueDisabled?: boolean;
-  continueLoading?: boolean;
-  continueTextStyle?: TextStyle;
-  handleCancel?: () => void;
-  handleContinue?: () => void;
-  labelCancel?: string;
-  labelContinue?: string;
+  primary?: ActionButton;
+  secondary?: ActionButton;
 }
 
-export const ActionButtons = ({
-  buttonContainerStyle,
-  cancelButtonStyle,
-  cancelDisabled,
-  cancelTextStyle,
-  continueButtonStyle,
-  continueDebounce,
-  continueDisabled,
-  continueLoading,
-  continueTextStyle,
-  handleCancel,
-  handleContinue,
-  labelCancel,
-  labelContinue,
-}: ActionButtonsProps) => {
-  const buttonCancel = labelCancel !== undefined ? labelCancel : ACTION_BUTTONS.BUTTON_CANCEL;
-  const buttonContinue = labelContinue !== undefined ? labelContinue : ACTION_BUTTONS.BUTTON_CONTINUE;
-
+export const ActionButtons: FunctionComponent<ActionButtonsProps> = ({ buttonContainerStyle, primary, secondary }: ActionButtonsProps) => {
   return (
     <View style={{ ...flexRow, ...buttonContainerStyle }}>
-      {handleCancel !== undefined ? (
+      {secondary !== undefined ? (
         <Fragment>
-          <RoundedButton
-            buttonStyle={cancelButtonStyle}
-            disabled={cancelDisabled}
-            onPress={handleCancel}
-            secondary={true}
-            text={buttonCancel}
-            textStyle={cancelTextStyle}
-          />
-          <CustomSpacer isHorizontal={true} space={sw8} />
+          <RoundedButton buttonStyle={flexChild} secondary={true} {...secondary} text={secondary.text || ACTION_BUTTONS.BUTTON_CANCEL} />
+          <CustomSpacer isHorizontal={true} space={sw16} />
         </Fragment>
       ) : null}
-      {handleContinue !== undefined ? (
-        <RoundedButton
-          buttonStyle={continueButtonStyle}
-          loading={continueLoading}
-          withDebounce={continueDebounce !== undefined ? continueDebounce : true}
-          disabled={continueDisabled}
-          onPress={handleContinue}
-          text={buttonContinue}
-          textStyle={continueTextStyle}
-        />
+      {primary !== undefined ? (
+        <RoundedButton buttonStyle={flexChild} {...primary} text={primary.text || ACTION_BUTTONS.BUTTON_CONTINUE} />
       ) : null}
     </View>
   );
