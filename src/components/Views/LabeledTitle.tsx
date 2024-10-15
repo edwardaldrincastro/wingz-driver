@@ -5,9 +5,10 @@ import {
   border,
   centerVertical,
   colorBlack,
+  colorGray,
   flexRow,
   fs10RegBlack2,
-  fs12BoldGray6,
+  fs12BoldBlack3,
   fs12RegGray11,
   fs14RegBlack1,
   fs14SemiBoldBlack3,
@@ -46,7 +47,7 @@ export const LabeledTitle: FunctionComponent<LabeledTitleProps> = ({
     <TouchableWrapper onPress={onPress}>
       <View style={style}>
         <View style={rowCenterVertical}>
-          <Text style={{ ...fs12BoldGray6, ...labelStyle }}>{label}</Text>
+          <Text style={{ ...fs12BoldBlack3, color: colorGray._4, ...labelStyle }}>{label}</Text>
           {headerSideContent !== undefined ? (
             <Text style={fs10RegBlack2}>headerSideContent</Text>
           ) : (
