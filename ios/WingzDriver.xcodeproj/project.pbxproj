@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* WingzDriverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WingzDriverTests.m */; };
+		01E2ACB230434E599EB080DB /* GalanoClassic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5DEA7027C8948B7BD450A66 /* GalanoClassic-Light.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-WingzDriver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-WingzDriver.a */; };
+		0E116FBCF347426BA072A184 /* GalanoClassic-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2660B8CF84144E2A77DB081 /* GalanoClassic-Black.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-WingzDriver-WingzDriverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WingzDriver-WingzDriverTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F3013605C041A4F2AADA304E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5461AF47164BA6578633A /* PrivacyInfo.xcprivacy */; };
-		0E116FBCF347426BA072A184 /* GalanoClassic-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2660B8CF84144E2A77DB081 /* GalanoClassic-Black.ttf */; };
-		D758C7D1FE254B2BB0FF1792 /* GalanoClassic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602D7CD0D8148E89B5CF167 /* GalanoClassic-Bold.ttf */; };
-		29E77B9ACA244BACB1C81A50 /* GalanoClassic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786CF1D5675F47C599750D31 /* GalanoClassic-ExtraBold.ttf */; };
-		D51E0D99FCB940E69AE5DCD5 /* GalanoClassic-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F473FC9E795E491D8AF96C9A /* GalanoClassic-ExtraLight.ttf */; };
 		17F977EEC79E495381F9ADFD /* GalanoClassic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03364C875B86483C96F2B1DE /* GalanoClassic-Heavy.ttf */; };
-		01E2ACB230434E599EB080DB /* GalanoClassic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5DEA7027C8948B7BD450A66 /* GalanoClassic-Light.ttf */; };
-		D17C29630ACC41C0A5A87D6D /* GalanoClassic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E62336D9D4A04292ADB27358 /* GalanoClassic-Medium.ttf */; };
+		29E77B9ACA244BACB1C81A50 /* GalanoClassic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786CF1D5675F47C599750D31 /* GalanoClassic-ExtraBold.ttf */; };
 		5932BFAF74F44D29B9FC8E42 /* GalanoClassic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37D639D59D4F47C091EE20F1 /* GalanoClassic-Regular.ttf */; };
 		5D169F3632954F1EA5064484 /* GalanoClassic-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 068A9413E17545FBBF67B3CA /* GalanoClassic-SemiBold.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-WingzDriver-WingzDriverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WingzDriver-WingzDriverTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B59C273D2C18491CA6B1853E /* GalanoClassic-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81D30572A3414FA19926DE15 /* GalanoClassic-Thin.ttf */; };
+		D17C29630ACC41C0A5A87D6D /* GalanoClassic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E62336D9D4A04292ADB27358 /* GalanoClassic-Medium.ttf */; };
+		D51E0D99FCB940E69AE5DCD5 /* GalanoClassic-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F473FC9E795E491D8AF96C9A /* GalanoClassic-ExtraLight.ttf */; };
+		D758C7D1FE254B2BB0FF1792 /* GalanoClassic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1602D7CD0D8148E89B5CF167 /* GalanoClassic-Bold.ttf */; };
+		F3013605C041A4F2AADA304E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5461AF47164BA6578633A /* PrivacyInfo.xcprivacy */; };
 		FFC34FF72C9A4F3D97D47412 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D76D48946245639BE474A7 /* icomoon.ttf */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +42,8 @@
 		00E356EE1AD99517003FC87E /* WingzDriverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WingzDriverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* WingzDriverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WingzDriverTests.m; sourceTree = "<group>"; };
+		03364C875B86483C96F2B1DE /* GalanoClassic-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Heavy.ttf"; path = "../src/assets/fonts/GalanoClassic-Heavy.ttf"; sourceTree = "<group>"; };
+		068A9413E17545FBBF67B3CA /* GalanoClassic-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-SemiBold.ttf"; path = "../src/assets/fonts/GalanoClassic-SemiBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* WingzDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WingzDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WingzDriver/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = WingzDriver/AppDelegate.mm; sourceTree = "<group>"; };
@@ -49,26 +51,24 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WingzDriver/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WingzDriver/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = WingzDriver/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1602D7CD0D8148E89B5CF167 /* GalanoClassic-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Bold.ttf"; path = "../src/assets/fonts/GalanoClassic-Bold.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-WingzDriver-WingzDriverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WingzDriver-WingzDriverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D639D59D4F47C091EE20F1 /* GalanoClassic-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Regular.ttf"; path = "../src/assets/fonts/GalanoClassic-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-WingzDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WingzDriver.debug.xcconfig"; path = "Target Support Files/Pods-WingzDriver/Pods-WingzDriver.debug.xcconfig"; sourceTree = "<group>"; };
+		50D76D48946245639BE474A7 /* icomoon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = icomoon.ttf; path = ../src/assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-WingzDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WingzDriver.release.xcconfig"; path = "Target Support Files/Pods-WingzDriver/Pods-WingzDriver.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-WingzDriver-WingzDriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WingzDriver-WingzDriverTests.debug.xcconfig"; path = "Target Support Files/Pods-WingzDriver-WingzDriverTests/Pods-WingzDriver-WingzDriverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-WingzDriver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WingzDriver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		786CF1D5675F47C599750D31 /* GalanoClassic-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-ExtraBold.ttf"; path = "../src/assets/fonts/GalanoClassic-ExtraBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WingzDriver/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81D30572A3414FA19926DE15 /* GalanoClassic-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Thin.ttf"; path = "../src/assets/fonts/GalanoClassic-Thin.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-WingzDriver-WingzDriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WingzDriver-WingzDriverTests.release.xcconfig"; path = "Target Support Files/Pods-WingzDriver-WingzDriverTests/Pods-WingzDriver-WingzDriverTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EC5461AF47164BA6578633A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = WingzDriver/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		B5DEA7027C8948B7BD450A66 /* GalanoClassic-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Light.ttf"; path = "../src/assets/fonts/GalanoClassic-Light.ttf"; sourceTree = "<group>"; };
+		E62336D9D4A04292ADB27358 /* GalanoClassic-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Medium.ttf"; path = "../src/assets/fonts/GalanoClassic-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F2660B8CF84144E2A77DB081 /* GalanoClassic-Black.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Black.ttf"; path = "../src/assets/fonts/GalanoClassic-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1602D7CD0D8148E89B5CF167 /* GalanoClassic-Bold.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Bold.ttf"; path = "../src/assets/fonts/GalanoClassic-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		786CF1D5675F47C599750D31 /* GalanoClassic-ExtraBold.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-ExtraBold.ttf"; path = "../src/assets/fonts/GalanoClassic-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F473FC9E795E491D8AF96C9A /* GalanoClassic-ExtraLight.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-ExtraLight.ttf"; path = "../src/assets/fonts/GalanoClassic-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		03364C875B86483C96F2B1DE /* GalanoClassic-Heavy.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Heavy.ttf"; path = "../src/assets/fonts/GalanoClassic-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B5DEA7027C8948B7BD450A66 /* GalanoClassic-Light.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Light.ttf"; path = "../src/assets/fonts/GalanoClassic-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E62336D9D4A04292ADB27358 /* GalanoClassic-Medium.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Medium.ttf"; path = "../src/assets/fonts/GalanoClassic-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		37D639D59D4F47C091EE20F1 /* GalanoClassic-Regular.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Regular.ttf"; path = "../src/assets/fonts/GalanoClassic-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		068A9413E17545FBBF67B3CA /* GalanoClassic-SemiBold.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-SemiBold.ttf"; path = "../src/assets/fonts/GalanoClassic-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		81D30572A3414FA19926DE15 /* GalanoClassic-Thin.ttf */ = {isa = PBXFileReference; name = "GalanoClassic-Thin.ttf"; path = "../src/assets/fonts/GalanoClassic-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		50D76D48946245639BE474A7 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F2660B8CF84144E2A77DB081 /* GalanoClassic-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-Black.ttf"; path = "../src/assets/fonts/GalanoClassic-Black.ttf"; sourceTree = "<group>"; };
+		F473FC9E795E491D8AF96C9A /* GalanoClassic-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GalanoClassic-ExtraLight.ttf"; path = "../src/assets/fonts/GalanoClassic-ExtraLight.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +177,7 @@
 			sourceTree = "<group>";
 		};
 		DBBE8D29F3204251AE351BDB /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				F2660B8CF84144E2A77DB081 /* GalanoClassic-Black.ttf */,
 				1602D7CD0D8148E89B5CF167 /* GalanoClassic-Bold.ttf */,
@@ -192,8 +192,8 @@
 				50D76D48946245639BE474A7 /* icomoon.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
