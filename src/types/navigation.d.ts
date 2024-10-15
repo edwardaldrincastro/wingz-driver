@@ -8,7 +8,9 @@ declare type NativeStackScreenProps<
 declare type RootStackParamList = {
   Home: undefined;
   Activity: undefined;
+  Onboarding: undefined;
 };
 
 declare type HomePageProps = NativeStackScreenProps<RootStackParamList, "Home">;
 declare type ActivityPageProps = NativeStackScreenProps<RootStackParamList, "Activity">;
+declare type OnboardingPageProps = NativeStackScreenProps<RootStackParamList, "Onboarding">;
