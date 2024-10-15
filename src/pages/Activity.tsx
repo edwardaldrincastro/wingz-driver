@@ -106,7 +106,7 @@ const { ACTIVITY } = Language.PAGE;
 export const ActivityPage: FunctionComponent<ActivityPageProps> = ({ navigation }: ActivityPageProps) => {
   return (
     <SafeAreaPage topBackgroundColor={colorGray._2}>
-      <ScrollView style={{ backgroundColor: colorGray._2 }}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: colorGray._2 }}>
         <View style={flexChild}>
           <View style={{ ...px(sw24), ...py(sh8) }}>
             <View style={{ ...rowCenterVertical, ...spaceBetweenHorizontal }}>
