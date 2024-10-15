@@ -1,9 +1,10 @@
 /* eslint-disable global-require */
 export const LocalAssets = {
   illustration: {
-    comingSoon: require("./illustration_coming_soon/illustration_coming_soon.png"),
-    noInternet: require("./illustration_no_internet/illustration_no_internet.png"),
-    onboarding: require("./illustration_onboarding/illustration_onboarding_1.png"),
+    onboarding1: require("./onboarding_1/onboarding_1.png"),
+    onboarding2: require("./onboarding_2/onboarding_2.png"),
+    onboarding3: require("./onboarding_3/onboarding_3.png"),
+    onboarding4: require("./onboarding_4/onboarding_4.png"),
   },
   marker: {
     driver: require("./driver_marker/driver_marker.png"),
