@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React, { Fragment, useEffect } from "react";
 import { KeyboardAvoidingView, PermissionsAndroid, Platform, StatusBar } from "react-native";
+import BootSplash from "react-native-bootsplash";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 
@@ -34,7 +35,7 @@ export const App = (): React.JSX.Element => {
   }, []);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer onReady={() => BootSplash.hide({ fade: true })}>
       <SafeAreaProvider>
         <Provider store={store}>
           <StatusBar barStyle="default" />
