@@ -1,0 +1,136 @@
+{
+  "rides": [
+    {
+      "id": "1",
+      "userId": "user123",
+      "driverId": "dr001",
+      "pickupLocation": {
+        "latitude": 14.5468,
+        "longitude": 121.0543
+      },
+      "destination": {
+        "latitude": 14.601513,
+        "longitude": 120.9837
+      },
+      "status": "dropped-off",
+      "pickupTime": "2024-10-16T10:30:00",
+      "timestamp": "2024-10-16T09:00:00",
+      "username": "Jordan",
+      "profilePic": "https://i.imgur.com/j7hDgpq.png",
+      "rate": "$20",
+      "distance": "1.6 mi",
+      "duration": 900,
+      "paymentMethod": "Applepay"
+    },
+    {
+      "id": "2",
+      "userId": "user456",
+      "driverId": "driver789",
+      "pickupLocation": {
+        "latitude": 14.5555,
+        "longitude": 121.0517
+      },
+      "destination": {
+        "latitude": 14.605,
+        "longitude": 120.9925
+      },
+      "status": "accepted",
+      "pickupTime": "2024-10-16T10:45:00",
+      "timestamp": "2024-10-16T09:30:00",
+      "username": "Hernandez",
+      "profilePic": "https://i.imgur.com/HITxHyk.png",
+      "rate": "$20",
+      "distance": "1.6 mi",
+      "duration": 1200,
+      "paymentMethod": "Applepay"
+    },
+    {
+      "id": "3",
+      "userId": "user789",
+      "driverId": null,
+      "pickupLocation": {
+        "latitude": 14.5565,
+        "longitude": 121.0541
+      },
+      "destination": {
+        "latitude": 14.626,
+        "longitude": 121.0838
+      },
+      "status": "declined",
+      "pickupTime": "2024-10-16T12:00:00",
+      "timestamp": "2024-10-16T10:00:00",
+      "username": "Sabrina",
+      "profilePic": "https://i.imgur.com/kIsfW43.png",
+      "rate": "$20",
+      "distance": "1.6 mi",
+      "duration": 1500,
+      "paymentMethod": "Applepay"
+    },
+    {
+      "id": "4",
+      "userId": "user101",
+      "driverId": "dr001",
+      "pickupLocation": {
+        "latitude": 14.5507,
+        "longitude": 121.0504
+      },
+      "destination": {
+        "latitude": 14.6055,
+        "longitude": 120.988
+      },
+      "status": "accepted",
+      "pickupTime": "2024-10-16T13:30:00",
+      "timestamp": "2024-10-16T11:30:00",
+      "username": "Alex",
+      "profilePic": "https://i.imgur.com/9RXLpyk.png",
+      "rate": "$25",
+      "distance": "1.6 mi",
+      "duration": 1800,
+      "paymentMethod": "PayPal"
+    },
+    {
+      "id": "5",
+      "userId": "user102",
+      "driverId": "driver790",
+      "pickupLocation": {
+        "latitude": 14.5587,
+        "longitude": 121.0529
+      },
+      "destination": {
+        "latitude": 14.5558,
+        "longitude": 121.05
+      },
+      "status": "accepted",
+      "pickupTime": "2024-10-16T14:30:00",
+      "timestamp": "2024-10-16T12:00:00",
+      "username": "Emma",
+      "profilePic": "https://i.imgur.com/tkXxyuT.png",
+      "rate": "$30",
+      "distance": "1.6 mi",
+      "duration": 1200,
+      "paymentMethod": "Credit Card"
+    },
+    {
+      "id": "6",
+      "userId": "user103",
+      "driverId": "dr001",
+      "pickupLocation": {
+        "latitude": 14.5544,
+        "longitude": 121.0458
+      },
+      "destination": {
+        "latitude": 14.1154,
+        "longitude": 120.962
+      },
+      "status": "dropped-off",
+      "pickupTime": "2024-10-16T02:00:00",
+      "timestamp": "2024-10-16T13:30:00",
+      "username": "Michael",
+      "profilePic": "https://i.imgur.com/oZhK14E.png",
+      "rate": "$22",
+      "distance": "1.6 mi",
+      "duration": 600,
+      "paymentMethod": "Cash"
+    }
+  ]
+}
