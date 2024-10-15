@@ -7,9 +7,9 @@ import { DAY_DATE_TIME_FORMAT, Language } from "../../constants";
 import {
   flexChild,
   fs12BoldGray6,
-  fs12BoldGreen1,
   fs12RegBlack2,
   fs12RegGray11,
+  fs14SemiBoldGreen3,
   fs16BoldBlack2,
   fsCapitalize,
   rowCenterVertical,
@@ -60,7 +60,7 @@ export const RideDetails: FunctionComponent<RideDetailsProps> = ({
         <CustomSpacer space={sh24} />
         <LabeledTitle label={HOME.LABEL_WHEN} title={dayjs(data.pickupTime).format(DAY_DATE_TIME_FORMAT)} />
         <CustomSpacer space={sh8} />
-        <LabeledTitle label={HOME.LABEL_STATUS} title={data.status} titleStyle={{ ...fs12BoldGreen1, ...fsCapitalize }} />
+        <LabeledTitle label={HOME.LABEL_STATUS} title={data.status} titleStyle={{ ...fs14SemiBoldGreen3, ...fsCapitalize }} />
         {viewDetails ? (
           <View>
             <CustomSpacer space={sh8} />

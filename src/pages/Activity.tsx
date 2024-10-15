@@ -9,8 +9,8 @@ import {
   colorGray,
   colorWhite,
   flexChild,
-  fs16SemiBoldGreen1,
-  fs20SemiBoldGreen3,
+  fs16SemiBoldBlue0,
+  fs20SemiBoldBlue0,
   px,
   py,
   rowCenterVertical,
@@ -105,8 +105,8 @@ const { ACTIVITY } = Language.PAGE;
 
 export const ActivityPage: FunctionComponent<ActivityPageProps> = ({ navigation }: ActivityPageProps) => {
   return (
-    <SafeAreaPage topBackgroundColor={colorGray._2}>
-      <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: colorGray._2 }}>
+    <SafeAreaPage topBackgroundColor={colorGray._7}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: colorGray._7 }}>
         <View style={flexChild}>
           <View style={{ ...px(sw24), ...py(sh8) }}>
             <View style={{ ...rowCenterVertical, ...spaceBetweenHorizontal }}>
@@ -117,10 +117,10 @@ export const ActivityPage: FunctionComponent<ActivityPageProps> = ({ navigation 
                 size={sh32}
                 style={{ ...circle(sh40, colorWhite._1), ...shadow12Black112 }}
               />
-              <Text style={fs20SemiBoldGreen3}>{ACTIVITY.LABEL_ACTIVITY}</Text>
+              <Text style={fs20SemiBoldBlue0}>{ACTIVITY.LABEL_ACTIVITY}</Text>
             </View>
             <CustomSpacer space={sh24} />
-            <Text style={fs16SemiBoldGreen1}>{ACTIVITY.LABEL_ONGOING}</Text>
+            <Text style={fs16SemiBoldBlue0}>{ACTIVITY.LABEL_ONGOING}</Text>
             <CustomSpacer space={sh16} />
             <ActivityItem
               data={{
@@ -133,7 +133,7 @@ export const ActivityPage: FunctionComponent<ActivityPageProps> = ({ navigation 
               }}
             />
             <CustomSpacer space={sh16} />
-            <Text style={fs16SemiBoldGreen1}>{ACTIVITY.LABEL_RECENT}</Text>
+            <Text style={fs16SemiBoldBlue0}>{ACTIVITY.LABEL_RECENT}</Text>
             <CustomSpacer space={sh16} />
             {MOCK_ACTIVITY.map((item, index) => {
               return (
