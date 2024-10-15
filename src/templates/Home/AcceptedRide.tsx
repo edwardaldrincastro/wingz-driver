@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { Text } from "react-native";
 
 import { ActionButtons, BottomSheet, CustomSpacer, LabeledTitle } from "../../components";
@@ -17,37 +17,30 @@ interface AcceptedRideProps {
 type RideCategory = "now" | "soon" | "future";
 
 export const AcceptedRide: FunctionComponent<AcceptedRideProps> = ({ data, handleLater, handleNow }: AcceptedRideProps) => {
-  const [timeLeft, setTimeLeft] = useState<string>("");
-  const [category, setCategory] = useState<RideCategory | null>(null);
+  const now = dayjs();
+  const targetDate = dayjs(data.pickupTime);
 
-  useEffect(() => {
-    const now = dayjs();
-    const targetDate = dayjs(data.pickupTime);
+  const diffInMinutes = targetDate.diff(now, "minute");
+  const diffInDays = targetDate.diff(now, "day");
+  const diffInHours = targetDate.diff(now, "hour") % 24;
+  const remainingMinutes = diffInMinutes % 60;
 
-    const diffInMinutes = targetDate.diff(now, "minute");
-    const diffInDays = targetDate.diff(now, "day");
-    const diffInHours = targetDate.diff(now, "hour") % 24;
-    const remainingMinutes = diffInMinutes % 60;
+  let category: RideCategory = "future";
 
-    let timeCategory: RideCategory = "future";
-    if (diffInMinutes <= 120) {
-      timeCategory = "now";
-    } else if (diffInMinutes > 120 && diffInMinutes < 720) {
-      timeCategory = "soon";
-    }
+  if (diffInMinutes <= 120) {
+    category = "now";
+  } else if (diffInMinutes > 120 && diffInMinutes < 720) {
+    category = "soon";
+  }
 
-    let timeBeforePickup = "";
-    if (diffInDays > 0) {
-      timeBeforePickup += `${diffInDays} day${diffInDays > 1 ? "s" : ""}`;
-    } else if (diffInHours > 0) {
-      timeBeforePickup += `${diffInHours} hour${diffInHours > 1 ? "s" : ""}`;
-    } else {
-      timeBeforePickup += `${remainingMinutes} min${remainingMinutes > 1 ? "s" : ""}`;
-    }
-
-    setCategory(timeCategory);
-    setTimeLeft(timeBeforePickup.trim());
-  }, [data]);
+  let timeLeft = "";
+  if (diffInDays > 0) {
+    timeLeft += `${diffInDays} day${diffInDays > 1 ? "s" : ""}`;
+  } else if (diffInHours > 0) {
+    timeLeft += `${diffInHours} hour${diffInHours > 1 ? "s" : ""}`;
+  } else {
+    timeLeft += `${remainingMinutes} min${remainingMinutes > 1 ? "s" : ""}`;
+  }
 
   const readyToGo = category === "soon" ? "Ready to go now?" : "";
 
