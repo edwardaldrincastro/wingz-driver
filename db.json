@@ -3,7 +3,7 @@
     {
       "id": "1",
       "userId": "user123",
-      "driverId": "dr001",
+      "driverId": null,
       "pickupLocation": {
         "latitude": 14.5468,
         "longitude": 121.0543
@@ -12,7 +12,7 @@
         "latitude": 14.601513,
         "longitude": 120.9837
       },
-      "status": "dropped-off",
+      "status": "pending",
       "pickupTime": "2024-10-16T10:30:00",
       "timestamp": "2024-10-16T09:00:00",
       "username": "Jordan",
@@ -56,7 +56,7 @@
         "latitude": 14.626,
         "longitude": 121.0838
       },
-      "status": "declined",
+      "status": "pending",
       "pickupTime": "2024-10-16T12:00:00",
       "timestamp": "2024-10-16T10:00:00",
       "username": "Sabrina",
@@ -69,7 +69,7 @@
     {
       "id": "4",
       "userId": "user101",
-      "driverId": "dr001",
+      "driverId": null,
       "pickupLocation": {
         "latitude": 14.5507,
         "longitude": 121.0504
@@ -78,7 +78,7 @@
         "latitude": 14.6055,
         "longitude": 120.988
       },
-      "status": "accepted",
+      "status": "pending",
       "pickupTime": "2024-10-16T13:30:00",
       "timestamp": "2024-10-16T11:30:00",
       "username": "Alex",
@@ -113,7 +113,7 @@
     {
       "id": "6",
       "userId": "user103",
-      "driverId": "dr001",
+      "driverId": null,
       "pickupLocation": {
         "latitude": 14.5544,
         "longitude": 121.0458
@@ -122,7 +122,7 @@
         "latitude": 14.1154,
         "longitude": 120.962
       },
-      "status": "dropped-off",
+      "status": "pending",
       "pickupTime": "2024-10-16T02:00:00",
       "timestamp": "2024-10-16T13:30:00",
       "username": "Michael",
