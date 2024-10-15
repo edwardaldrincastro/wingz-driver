@@ -61,6 +61,12 @@ export const fs12BoldGray6: TextStyle = {
   fontFamily: GalanoClassicBold,
 };
 
+export const fs12BoldBlack3: TextStyle = {
+  color: colorBlack._3,
+  fontSize: sh12,
+  fontFamily: GalanoClassicBold,
+};
+
 export const fs12BoldGreen1: TextStyle = {
   color: colorGreen._1,
   fontSize: sh12,
@@ -361,6 +367,12 @@ export const fs16SemiBoldWhite4: TextStyle = {
   fontFamily: GalanoClassicSemiBold,
 };
 
+export const fs16SemiBoldBlue0: TextStyle = {
+  color: colorBlue._0,
+  fontSize: sh16,
+  fontFamily: GalanoClassicSemiBold,
+};
+
 export const fs16SemiBoldGreen1: TextStyle = {
   color: colorGreen._1,
   fontSize: sh16,
@@ -403,8 +415,8 @@ export const fs18SemiBoldYellow3: TextStyle = {
   fontFamily: GalanoClassicSemiBold,
 };
 
-export const fs20SemiBoldGreen3: TextStyle = {
-  color: colorGreen._3,
+export const fs20SemiBoldBlue0: TextStyle = {
+  color: colorBlue._0,
   fontSize: sh20,
   fontFamily: GalanoClassicSemiBold,
 };
