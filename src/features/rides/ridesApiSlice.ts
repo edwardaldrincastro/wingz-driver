@@ -8,7 +8,8 @@ interface FetchRidesParams {
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://192.168.68.107:3001",
+    // baseUrl: "http://localhost:3000",
   }),
   tagTypes: ["Rides", "Accepted Rides"],
   endpoints: (builder) => ({
@@ -19,10 +20,9 @@ export const apiSlice = createApi({
       },
       providesTags: ["Rides"],
     }),
-    fetchAcceptedRides: builder.query<Ride[], FetchRidesParams>({
-      query({ longitude, latitude }) {
-        // in reality, we will fetch the rides based on driver's location
-        return `/rides?longitude=${longitude}&latitude=${latitude}status=accepted`;
+    fetchAcceptedRides: builder.query<Ride[], void>({
+      query() {
+        return "/rides?status=accepted";
       },
       providesTags: ["Accepted Rides"],
     }),
@@ -51,4 +51,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useFetchRidesQuery, useUpdateRideStatusMutation } = apiSlice;
+export const { useFetchRidesQuery, useFetchAcceptedRidesQuery, useUpdateRideStatusMutation } = apiSlice;

@@ -17,6 +17,7 @@
     "clean:modules": "rm -rf node_modules && yarn",
     "format_all": "prettier --write \"{src,tests}/**/*.{tsx,ts,json,js,jsx}\"",
     "start:json-server": "json-server --watch db.json --port 3000",
+    "start:json-server-wifi": "json-server --watch db.json --host 192.168.68.107 --port 3001",
     "postinstall": "patch-package"
   },
   "dependencies": {

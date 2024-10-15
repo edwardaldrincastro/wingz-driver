@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { View, ViewStyle } from "react-native";
 
-import { colorWhite, px, py, sh16, shadow12Black112, sw16, sw24 } from "../../styles";
+import { colorWhite, px, py, sh16, shadow12Black112, sw12, sw16, sw24 } from "../../styles";
 
 interface BottomSheetProps {
   children?: JSX.Element;
@@ -16,7 +16,7 @@ export const BottomSheet: FunctionComponent<BottomSheetProps> = ({ children, ...
         ...py(sh16),
         ...shadow12Black112,
         backgroundColor: colorWhite._1,
-        borderRadius: sw16,
+        borderRadius: sw12,
         marginHorizontal: sw24,
         ...style,
       }}>

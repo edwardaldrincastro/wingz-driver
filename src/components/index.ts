@@ -3,7 +3,6 @@ export * from "./Header";
 export * from "./Images";
 export * from "./Input";
 export * from "./Maps";
-export * from "./Modals";
 export * from "./Progress";
 export * from "./Touchables";
 export * from "./Views";

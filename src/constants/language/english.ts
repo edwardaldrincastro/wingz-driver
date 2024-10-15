@@ -6,7 +6,13 @@ export const english = {
     },
   },
   PAGE: {
+    ACTIVITY: {
+      LABEL_ACTIVITY: "Activity",
+      LABEL_ONGOING: "Ongoing Trips",
+      LABEL_RECENT: "Recent",
+    },
     HOME: {
+      BUTTON_END: "End Trip",
       BUTTON_LATER: "Later",
       BUTTON_TRY: "Try Again",
       BUTTON_YES: "Yes",

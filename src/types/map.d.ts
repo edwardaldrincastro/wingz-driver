@@ -22,6 +22,7 @@ declare interface Ride {
   };
   status: "pending" | "accepted" | "declined" | "started" | "picked-up" | "dropped-off"; // Status of the ride request
   pickupTime: Date; // Time when the ride is scheduled for pickup
+  droppedOffTime?: Date; // Time when the ride is scheduled for pickup
   timestamp: Date; // Timestamp of when the ride request was made
 
   username: string; // TODO

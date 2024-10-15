@@ -1,26 +1,10 @@
-import dayjs from "dayjs";
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
-import { Dimensions, Text, View } from "react-native";
+import { Dimensions, View } from "react-native";
 import MapView, { Region } from "react-native-maps";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import {
-  ActionButtons,
-  BottomSheet,
-  CustomFlexSpacer,
-  CustomImage,
-  CustomMap,
-  CustomMapMarker,
-  CustomSpacer,
-  IconButton,
-  IconText,
-  LabeledTitle,
-  LinkText,
-  MapDirections,
-  RoundedButton,
-} from "../components";
-import { DAY_DATE_TIME_FORMAT, Language } from "../constants";
+import { CustomFlexSpacer, CustomMap, CustomMapMarker, IconButton, IconText, MapDirections } from "../components";
 import {
   fetchAddresses,
   located,
@@ -30,41 +14,27 @@ import {
   useFetchRidesQuery,
   useUpdateRideStatusMutation,
 } from "../features";
-import { calculateDeltaFromMidpointMultiple, calculateMidpointMultiple, getTimeBeforePickup } from "../helpers";
+import { calculateDeltaFromMidpointMultiple, calculateMidpointMultiple } from "../helpers";
 import {
   absolutePosition,
   circle,
   colorBlue,
   colorGreen,
   colorWhite,
-  flexChild,
   fs12BoldGray6,
-  fs12BoldGreen1,
-  fs12RegBlack2,
-  fs12RegGray11,
-  fs16BoldBlack2,
-  fs16MedBlack1,
-  fs16RegBlack1,
-  fsAlignCenter,
-  fsCapitalize,
   fullHW,
   fullWidth,
   px,
-  py,
   rowCenterVertical,
-  sh20,
   sh24,
-  sh4,
-  sh40,
-  sh8,
+  sh44,
+  sh48,
   shadow12Black112,
   sw16,
-  sw32,
-  sw4,
   sw44,
-  sw56,
-  sw8,
+  sw48,
 } from "../styles";
+import { AcceptedRide, ErrorHandling, OngoingRide, RideDetails } from "../templates/Home";
 
 const screen = Dimensions.get("window");
 const ASPECT_RATIO = screen.width / screen.height;
@@ -75,11 +45,7 @@ const MOCK_PREVIOUS_LOCATION = { latitude: 14.5629, longitude: 121.0364 };
 const MOCK_CURRENT_LOCATION = { latitude: 14.541, longitude: 121.05 };
 const DEFAULT_DELTA = { latitudeDelta: LATITUDE_DELTA, longitudeDelta: LONGITUDE_DELTA };
 
-const { HOME } = Language.PAGE;
-
-interface HomeProps {}
-
-export const Home: FunctionComponent<HomeProps> = () => {
+export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomePageProps) => {
   // Notes: use Location Service API from Google to get FindPickupPointsForPlace
   const { bottom, top } = useSafeAreaInsets();
 
@@ -92,6 +58,7 @@ export const Home: FunctionComponent<HomeProps> = () => {
   const {
     data: rides,
     isFetching,
+    error,
     refetch,
   } = useFetchRidesQuery(
     {
@@ -104,16 +71,12 @@ export const Home: FunctionComponent<HomeProps> = () => {
   const [updateRideStatus] = useUpdateRideStatusMutation();
 
   // region is being set through moveLocation ref
-  const [region] = useState<Region>({
-    // when the map opens, it will open to the last location of the driver
-    ...MOCK_PREVIOUS_LOCATION,
-    ...DEFAULT_DELTA,
-  });
+  const [region] = useState<Region>({ ...MOCK_PREVIOUS_LOCATION, ...DEFAULT_DELTA }); // when the map opens, it will open to the last location of the driver
   const mapRef = useRef<MapView | null>(null);
 
   const [viewDetails, setViewDetails] = useState<boolean>(false);
   const [accepted, setAccepted] = useState<boolean>(false);
-  const [traveling, setTraveling] = useState<boolean>(false);
+  const [isTraveling, setIsTraveling] = useState<boolean>(false);
 
   const moveToLocation = async (latitude: number, longitude: number, latitudeDelta = LATITUDE_DELTA, longitudeDelta = LONGITUDE_DELTA) => {
     if (mapRef && mapRef.current) {
@@ -142,7 +105,16 @@ export const Home: FunctionComponent<HomeProps> = () => {
     setAccepted(true);
     if (selectedRide) {
       updateRideStatus({ id: selectedRide.id, status: "accepted", driverId });
-      // TODO calculate time left to know if will go now, later or in few days
+      refetch();
+    }
+  };
+
+  const handleEndTrip = () => {
+    if (selectedRide) {
+      updateRideStatus({ id: selectedRide.id, status: "dropped-off" });
+      setIsTraveling(false);
+      handleLater();
+      refetch();
     }
   };
 
@@ -151,14 +123,9 @@ export const Home: FunctionComponent<HomeProps> = () => {
       setViewDetails(false);
       setAccepted(false);
       moveToLocation(currentLocation.latitude, currentLocation.longitude, 0.005, 0.005);
-      setTraveling(true);
-      // dispatch(resetSelectedRide());
+      setIsTraveling(true);
     }
   };
-
-  console.log("accepted", accepted);
-  console.log("viewDetails", viewDetails);
-  console.log("traveling", traveling);
 
   const handleSelectRide = async (ride: Ride) => {
     if (currentLocation) {
@@ -182,6 +149,10 @@ export const Home: FunctionComponent<HomeProps> = () => {
 
       moveToLocation(midpoint.latitude - dynamicDelta * 0.4, midpoint.longitude, dynamicDelta, dynamicDelta);
     }
+  };
+
+  const handleViewOrders = () => {
+    navigation.navigate("Activity");
   };
 
   // simulate getting the live location of the driver
@@ -236,7 +207,7 @@ export const Home: FunctionComponent<HomeProps> = () => {
         <CustomMap ref={mapRef} region={region}>
           {/* map markers for nearby rides */}
           {rides &&
-            !traveling &&
+            !isTraveling &&
             !viewDetails &&
             rides.map((rider, index) => {
               const handleMarkerPress = () => {
@@ -263,7 +234,9 @@ export const Home: FunctionComponent<HomeProps> = () => {
           )}
 
           {/* live marker to pick up location */}
-          {traveling && currentLocation && selectedRide && <CustomMapMarker coordinate={selectedRide.pickupLocation} type="riderPickup" />}
+          {isTraveling && currentLocation && selectedRide && (
+            <CustomMapMarker coordinate={selectedRide.pickupLocation} type="riderPickup" />
+          )}
 
           {/* map marker and directions for rider pick up location and destination */}
           {viewDetails && selectedRide && selectedRide.destination && selectedRide.pickupLocation && (
@@ -277,7 +250,7 @@ export const Home: FunctionComponent<HomeProps> = () => {
       )}
       <View style={{ ...absolutePosition, ...fullWidth, top: top }}>
         <View style={{ ...px(sw16), ...rowCenterVertical, ...shadow12Black112 }}>
-          <IconButton color={colorBlue._0} name="more" size={sh20} style={circle(sh40, colorWhite._1)} />
+          <IconButton color={colorBlue._0} name="more" onPress={handleViewOrders} size={sh24} style={circle(sh48, colorWhite._1)} />
           <CustomFlexSpacer />
           <IconText
             color={status ? colorGreen._0 : colorBlue._0}
@@ -286,108 +259,30 @@ export const Home: FunctionComponent<HomeProps> = () => {
             name={status ? "flash-on" : "flash-off"}
             onPress={() => dispatch(statusUpdated())}
             spaceBetween={0}
-            style={{ borderRadius: sw32, backgroundColor: colorWhite._1, ...px(sw16), ...py(sh8) }}
+            style={{ borderRadius: sw48, backgroundColor: colorWhite._1, height: sh44, ...px(sw16) }}
             text={status ? "Online" : "Offline"}
             textStyle={{ ...fs12BoldGray6, width: sw44 }}
           />
         </View>
       </View>
       <View style={{ ...absolutePosition, ...fullWidth, bottom: bottom }}>
-        {isFetching && (
-          <BottomSheet>
-            <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>Getting nearby requests...</Text>
-          </BottomSheet>
+        {selectedRide && isTraveling && <OngoingRide data={selectedRide} handleEndTrip={handleEndTrip} />}
+        {selectedRide && accepted && <AcceptedRide data={selectedRide} handleNow={handleGoNow} handleLater={handleLater} />}
+        {selectedRide && !isTraveling && !accepted && (
+          <RideDetails
+            data={selectedRide}
+            handleAccept={handleAccept}
+            handleDecline={handleDecline}
+            handleViewDetails={handleViewDetails}
+            viewDetails={viewDetails}
+          />
         )}
-        {rides && rides.length === 0 && !isFetching && (
-          <BottomSheet>
-            <View style={rowCenterVertical}>
-              <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>No nearby requests</Text>
-              <CustomFlexSpacer />
-              <LinkText onPress={refetch} style={{ ...fs12BoldGray6, color: colorBlue._0 }} text={HOME.BUTTON_TRY} />
-            </View>
-          </BottomSheet>
-        )}
-        {selectedRide && !traveling && (
-          <BottomSheet>
-            <>
-              {!accepted ? (
-                <>
-                  <View style={rowCenterVertical}>
-                    <CustomImage source={{ uri: selectedRide.profilePic }} style={{ width: sw56, height: sw56, borderRadius: sw8 }} />
-                    <CustomSpacer isHorizontal space={sw16} />
-                    <View>
-                      <Text style={fs16BoldBlack2}>{selectedRide.username}</Text>
-                      <Text style={fs12RegBlack2}>{selectedRide.paymentMethod}</Text>
-                    </View>
-                    <CustomFlexSpacer />
-                    <View>
-                      <View style={rowCenterVertical}>
-                        <CustomSpacer isHorizontal space={sw4} />
-                        <Text style={fs12BoldGray6}>{selectedRide.rate}</Text>
-                      </View>
-                      <Text style={fs12RegGray11}>{selectedRide.distance}</Text>
-                    </View>
-                  </View>
-                  <CustomSpacer space={sh24} />
-                  <LabeledTitle label={HOME.LABEL_WHEN} title={dayjs(selectedRide.pickupTime).format(DAY_DATE_TIME_FORMAT)} />
-                  <CustomSpacer space={sh8} />
-                  <LabeledTitle label={HOME.LABEL_STATUS} title={selectedRide.status} titleStyle={{ ...fs12BoldGreen1, ...fsCapitalize }} />
-                  {viewDetails ? (
-                    <View>
-                      <CustomSpacer space={sh8} />
-                      <LabeledTitle label={HOME.LABEL_PICKUP} spaceToBottom={sh8} title={selectedRide.pickupLocation.address || "-"} />
-                      <LabeledTitle label={HOME.LABEL_DESTINATION} spaceToBottom={sh24} title={selectedRide.destination.address || "-"} />
-                      <ActionButtons primary={{ onPress: handleAccept }} secondary={{ onPress: handleDecline }} />
-                    </View>
-                  ) : (
-                    <>
-                      <CustomSpacer space={sh24} />
-                      <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={handleViewDetails} text="View Details" />
-                    </>
-                  )}
-                </>
-              ) : (
-                <>
-                  {/* accepted and soon */}
-                  <View>
-                    <LabeledTitle label={HOME.LABEL_WHEN} title={dayjs(selectedRide.pickupTime).format(DAY_DATE_TIME_FORMAT)} />
-                    <CustomSpacer space={sh4} />
-                    <LabeledTitle label={HOME.LABEL_PICKUP} title={selectedRide.pickupLocation.address || "-"} />
-                    <CustomSpacer space={sh24} />
-                    <Text style={fs16RegBlack1}>
-                      This ride is scheduled in <Text style={fs16BoldBlack2}>{getTimeBeforePickup(selectedRide.pickupTime)}</Text>. You are
-                      <Text style={fs16BoldBlack2}> 20 mins</Text> away from pick up location. Ready to go now?
-                    </Text>
-                    <CustomSpacer space={sh24} />
-                    <ActionButtons
-                      primary={{ onPress: handleGoNow, text: HOME.BUTTON_YES }}
-                      secondary={{ onPress: handleLater, text: HOME.BUTTON_LATER }}
-                    />
-                  </View>
-                  {/* accepted but in the future
-                <View>
-                  <LabeledTitle
-                    label={HOME.LABEL_WHEN}
-                    title={dayjs(selectedRide.pickupTime).format(DAY_DATE_TIME_FORMAT)}
-                  />
-                  <CustomSpacer space={sh4} />
-                  <LabeledTitle
-                    label={HOME.LABEL_PICKUP}
-                    title={selectedRide.pickupLocation.address || "-"}
-                  />
-                  <CustomSpacer space={sh24} />
-                  <Text style={fs16RegBlack1}>
-                    This ride is scheduled in <Text style={fs16BoldBlack2}>{getTimeBeforePickup(selectedRide.pickupTime)}</Text>.
-                    We'll send you a reminder as the time approaches.
-                  </Text>
-                  <CustomSpacer space={sh24} />
-                  <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={() => {}} text="Got it" />
-                </View> */}
-                </>
-              )}
-            </>
-          </BottomSheet>
-        )}
+        <ErrorHandling
+          error={error}
+          isFetching={isFetching}
+          noNearby={rides !== undefined && rides.length === 0 && !isFetching && !accepted && !isTraveling}
+          refetch={refetch}
+        />
       </View>
     </View>
   );

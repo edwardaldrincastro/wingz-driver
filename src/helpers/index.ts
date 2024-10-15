@@ -1,2 +1,2 @@
 export * from "./geolocation";
-export * from "./midpointLocation";
+export * from "./maps";

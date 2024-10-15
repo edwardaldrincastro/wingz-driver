@@ -1,7 +1,6 @@
 export * from "./Button";
 export * from "./Icon";
 export * from "./IconButton";
-export * from "./IconButtonGroup";
 export * from "./IconText";
 export * from "./LinkText";
 export * from "./OutlineButton";
