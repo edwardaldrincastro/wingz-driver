@@ -48,6 +48,8 @@ const DEFAULT_DELTA = { latitudeDelta: LATITUDE_DELTA, longitudeDelta: LONGITUDE
 export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomePageProps) => {
   // Notes: use Location Service API from Google to get FindPickupPointsForPlace
   const { bottom, top } = useSafeAreaInsets();
+  const bottomSpace = bottom > 0 ? bottom : 16;
+  const topSpace = top > 0 ? top : 16;
 
   const dispatch = useAppDispatch();
 
@@ -96,6 +98,7 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
   const handleLater = () => {
     if (selectedRide) {
       dispatch(resetSelectedRide());
+      refetch();
       setViewDetails(false);
       setAccepted(false);
     }
@@ -105,7 +108,6 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
     setAccepted(true);
     if (selectedRide) {
       updateRideStatus({ id: selectedRide.id, status: "accepted", driverId });
-      refetch();
     }
   };
 
@@ -248,7 +250,7 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
           )}
         </CustomMap>
       )}
-      <View style={{ ...absolutePosition, ...fullWidth, top: top }}>
+      <View style={{ ...absolutePosition, ...fullWidth, top: topSpace }}>
         <View style={{ ...px(sw16), ...rowCenterVertical, ...shadow12Black112 }}>
           <IconButton color={colorBlue._0} name="more" onPress={handleViewOrders} size={sh24} style={circle(sh48, colorWhite._1)} />
           <CustomFlexSpacer />
@@ -265,7 +267,7 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
           />
         </View>
       </View>
-      <View style={{ ...absolutePosition, ...fullWidth, bottom: bottom }}>
+      <View style={{ ...absolutePosition, ...fullWidth, bottom: bottomSpace }}>
         {selectedRide && isTraveling && <OngoingRide data={selectedRide} handleEndTrip={handleEndTrip} />}
         {selectedRide && accepted && <AcceptedRide data={selectedRide} handleNow={handleGoNow} handleLater={handleLater} />}
         {selectedRide && !isTraveling && !accepted && (
