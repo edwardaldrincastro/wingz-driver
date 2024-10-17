@@ -4,7 +4,7 @@ import MapView, { Region } from "react-native-maps";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { CustomFlexSpacer, CustomMap, CustomMapMarker, IconButton, IconText, MapDirections } from "../components";
+import { CustomMap, CustomMapMarker, IconButton, IconText, MapDirections } from "../components";
 import {
   fetchAddresses,
   located,
@@ -25,11 +25,9 @@ import {
   fullHW,
   fullWidth,
   px,
-  rowCenterVertical,
   sh24,
   sh44,
   sh48,
-  shadow12Black112,
   sw16,
   sw44,
   sw48,
@@ -249,26 +247,35 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
           )}
         </CustomMap>
       )}
-      <View style={{ ...absolutePosition, ...fullWidth, top: topSpace }}>
-        <View style={{ ...px(sw16), ...rowCenterVertical, ...shadow12Black112 }}>
-          <IconButton color={colorBlue._0} name="more" onPress={handleViewOrders} size={sh24} style={circle(sh48, colorWhite._1)} />
-          <CustomFlexSpacer />
-          <IconText
-            color={status ? colorGreen._0 : colorBlue._0}
-            iconPosition="right"
-            iconSize={sh24}
-            name={status ? "flash-on" : "flash-off"}
-            onPress={() => dispatch(statusUpdated())}
-            spaceBetween={0}
-            style={{ borderRadius: sw48, backgroundColor: colorWhite._1, height: sh44, ...px(sw16) }}
-            text={status ? "Online" : "Offline"}
-            textStyle={{ ...fs12BoldGray6, width: sw44 }}
-          />
-        </View>
-      </View>
+      <IconButton
+        color={colorBlue._0}
+        name="more"
+        onPress={handleViewOrders}
+        size={sh24}
+        style={{ ...absolutePosition, ...circle(sh48, colorWhite._1), left: sw16, top: topSpace }}
+      />
+      <IconText
+        color={status ? colorGreen._0 : colorBlue._0}
+        iconPosition="right"
+        iconSize={sh24}
+        name={status ? "flash-on" : "flash-off"}
+        onPress={() => dispatch(statusUpdated())}
+        spaceBetween={0}
+        style={{
+          ...absolutePosition,
+          ...px(sw16),
+          borderRadius: sw48,
+          backgroundColor: colorWhite._1,
+          height: sh44,
+          right: sw16,
+          top: topSpace,
+        }}
+        text={status ? "Online" : "Offline"}
+        textStyle={{ ...fs12BoldGray6, width: sw44 }}
+      />
       <View style={{ ...absolutePosition, ...fullWidth, bottom: bottomSpace }}>
         {selectedRide && isTraveling && <OngoingRide data={selectedRide} handleEndTrip={handleEndTrip} />}
-        {selectedRide && accepted && <AcceptedRide data={selectedRide} handleNow={handleGoNow} handleLater={handleLater} />}
+        {selectedRide && accepted && <AcceptedRide data={selectedRide} handleLater={handleLater} handleNow={handleGoNow} />}
         {selectedRide && !isTraveling && !accepted && (
           <RideDetails
             data={selectedRide}
