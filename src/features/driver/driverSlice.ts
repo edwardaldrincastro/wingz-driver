@@ -18,7 +18,7 @@ export const driverSlice = createSlice({
   initialState,
   reducers: {
     located(state, action: PayloadAction<Coordinates>) {
-      // in RTK, you can mutate the state directly because of immer
+      // I know this is bad in previous Redux implementation but in RTK, you can mutate the state directly because of Immer
       state.currentLocation = action.payload;
     },
     statusUpdated(state) {

@@ -8,14 +8,13 @@ interface FetchRidesParams {
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://192.168.68.107:3001",
+    baseUrl: "http://192.168.68.107:3001", // change the baseUrl to your IP if you want to use it in your local device. e.g http://192.168.68.107:3001
     // baseUrl: "http://localhost:3000",
   }),
   tagTypes: ["Rides", "Accepted Rides"],
   endpoints: (builder) => ({
     fetchRides: builder.query<Ride[], FetchRidesParams>({
       query({ longitude, latitude }) {
-        // in reality, we will fetch the rides based on driver's location
         return `/rides?longitude=${longitude}&latitude=${latitude}&status=pending`;
       },
       providesTags: ["Rides"],
@@ -37,7 +36,7 @@ export const apiSlice = createApi({
           apiSlice.util.updateQueryData("fetchRides", {}, (draft) => {
             const ride = draft.find((findRide) => findRide.id === id);
             if (ride) {
-              ride.status = status; // Update the status
+              ride.status = status;
             }
           }),
         );
