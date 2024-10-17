@@ -1,0 +1,49 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/GalanoClassic-Black.ttf",
+      "sha1": "6e06adc5a2d0915d4a82104b2fc307de28010aa1"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-Bold.ttf",
+      "sha1": "0fb60010bc37b7e0a587f85ac4771f5b06bba6d8"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-ExtraBold.ttf",
+      "sha1": "82957389d853b233fe479ecec6f8c53b81362f00"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-ExtraLight.ttf",
+      "sha1": "84b141ccd61af49fd13796d7cf7eba659cbdaca2"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-Heavy.ttf",
+      "sha1": "b6a3f4a222127b351e941a83c591e04eea8c0255"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-Light.ttf",
+      "sha1": "6cef47c31284251246fcbc9810ad656f83ef7cd7"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-Medium.ttf",
+      "sha1": "7d3e0989d0d80e69b1966110e860d156ef9fd0ff"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-Regular.ttf",
+      "sha1": "0f30c41e2d1c88daab7296602039eefb6ed75a25"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-SemiBold.ttf",
+      "sha1": "78163e76248ad8a6e6ed30e30447975f7bc345df"
+    },
+    {
+      "path": "src/assets/fonts/GalanoClassic-Thin.ttf",
+      "sha1": "97a5b6529c4fe9cd1c8f759957f8bf8d829bea4d"
+    },
+    {
+      "path": "src/assets/fonts/icomoon.ttf",
+      "sha1": "e08f61012e44da42b7e67fff22b31b89e9a32b80"
+    }
+  ]
+}

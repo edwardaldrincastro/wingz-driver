@@ -1,0 +1,10 @@
+export const GalanoClassicBlack = "GalanoClassic-Black";
+export const GalanoClassicBold = "GalanoClassic-Bold";
+export const GalanoClassicExtraBold = "GalanoClassic-ExtraBold";
+export const GalanoClassicExtraLight = "GalanoClassic-ExtraLight";
+export const GalanoClassicHeavy = "GalanoClassic-Heavy";
+export const GalanoClassicLight = "GalanoClassic-Light";
+export const GalanoClassicMedium = "GalanoClassic-Medium";
+export const GalanoClassicRegular = "GalanoClassic-Regular";
+export const GalanoClassicSemiBold = "GalanoClassic-SemiBold";
+export const GalanoClassicThin = "GalanoClassic-Thin";
