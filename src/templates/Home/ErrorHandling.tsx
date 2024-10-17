@@ -3,9 +3,9 @@ import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
-import { BottomSheet, CustomFlexSpacer, LinkText } from "../../components";
+import { BottomSheet, CustomFlexSpacer, CustomSpacer, LinkText } from "../../components";
 import { Language } from "../../constants";
-import { colorBlue, fs12BoldGray6, fs16MedBlack1, fsAlignCenter, rowCenterVertical } from "../../styles";
+import { colorBlue, fs12BoldGray6, fs16MedBlack1, fsAlignCenter, rowCenterVertical, sh16 } from "../../styles";
 
 const { HOME } = Language.PAGE;
 
@@ -27,13 +27,16 @@ export const ErrorHandling: FunctionComponent<ErrorHandlingProps> = ({ error, is
 
   if (error !== undefined) {
     return (
-      <BottomSheet>
-        <View style={rowCenterVertical}>
-          <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>{HOME.LABEL_ERROR_REQUEST}</Text>
-          <CustomFlexSpacer />
-          <LinkText onPress={refetch} style={{ ...fs12BoldGray6, color: colorBlue._0 }} text={HOME.BUTTON_TRY} />
-        </View>
-      </BottomSheet>
+      <>
+        <CustomSpacer space={sh16} />
+        <BottomSheet>
+          <View style={rowCenterVertical}>
+            <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>{HOME.LABEL_ERROR_REQUEST}</Text>
+            <CustomFlexSpacer />
+            <LinkText onPress={refetch} style={{ ...fs12BoldGray6, color: colorBlue._0 }} text={HOME.BUTTON_TRY} />
+          </View>
+        </BottomSheet>
+      </>
     );
   }
 
