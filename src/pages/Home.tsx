@@ -67,12 +67,12 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
     { skip: currentLocation === undefined },
   );
 
-  const [updateRideStatus] = useUpdateRideStatusMutation();
+  const [updateRideStatus, { isLoading: updateRideIsLoading, originalArgs }] = useUpdateRideStatusMutation();
 
-  // region is being set through moveLocation ref
-  const [region] = useState<Region>({ ...MOCK_PREVIOUS_LOCATION, ...DEFAULT_DELTA });
+  const [region] = useState<Region>({ ...MOCK_PREVIOUS_LOCATION, ...DEFAULT_DELTA }); // region is being set through moveLocation ref
   const mapRef = useRef<MapView | null>(null);
 
+  const [onMapReady, setOnMapReady] = useState<boolean>(false);
   const [viewDetails, setViewDetails] = useState<boolean>(false);
   const [accepted, setAccepted] = useState<boolean>(false);
   const [isTraveling, setIsTraveling] = useState<boolean>(false);
@@ -110,15 +110,15 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
 
   const handleEndTrip = () => {
     if (selectedRide) {
-      updateRideStatus({ id: selectedRide.id, status: "dropped-off" });
       setIsTraveling(false);
-      handleLater();
-      refetch();
+      dispatch(resetSelectedRide());
+      updateRideStatus({ id: selectedRide.id, status: "dropped-off" });
     }
   };
 
   const handleGoNow = () => {
     if (currentLocation && selectedRide) {
+      updateRideStatus({ id: selectedRide.id, status: "started" });
       setViewDetails(false);
       setAccepted(false);
       moveToLocation(currentLocation.latitude, currentLocation.longitude, 0.005, 0.005);
@@ -154,13 +154,15 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
     navigation.navigate("Activity");
   };
 
+  const handleOnMapReady = () => {
+    setOnMapReady(true);
+  };
+
   // simulate getting the live location of the driver
   useEffect(() => {
     const getLiveLocation = async () => {
       // const { latitude, longitude } = await getCurrentLocation();
       dispatch(located(MOCK_CURRENT_LOCATION));
-
-      moveToLocation(MOCK_CURRENT_LOCATION.latitude, MOCK_CURRENT_LOCATION.longitude);
     };
 
     getLiveLocation();
@@ -170,8 +172,8 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
   useEffect(() => {
     // if rider requests has been received, move the map to the midpoint of driver and riders
     // used to also reset the midpoint when a ride has been declined
-    if (currentLocation) {
-      if (rides && !selectedRide) {
+    if (onMapReady && currentLocation) {
+      if (rides && !selectedRide && (!updateRideIsLoading || (updateRideIsLoading && originalArgs?.status === "dropped-off"))) {
         const requestsCoordinates = rides.map((eachReq) => eachReq.pickupLocation);
         // include the currentLocation of the driver to be used for calculating the midpoint
         requestsCoordinates.push(currentLocation);
@@ -198,55 +200,51 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rides, selectedRide]);
+  }, [rides, selectedRide, onMapReady]);
 
   return (
     <View style={fullHW}>
-      {currentLocation && (
-        <CustomMap ref={mapRef} region={region}>
-          {/* map markers for nearby rides */}
-          {rides &&
-            !isTraveling &&
-            !viewDetails &&
-            rides.map((rider, index) => {
-              const handleMarkerPress = () => {
-                handleSelectRide(rider);
-              };
+      <CustomMap onMapReady={handleOnMapReady} ref={mapRef} region={region}>
+        {/* map markers for nearby rides */}
+        {rides &&
+          !isTraveling &&
+          !viewDetails &&
+          rides.map((rider, index) => {
+            const handleMarkerPress = () => {
+              handleSelectRide(rider);
+            };
 
-              const isSelected = selectedRide?.id === rider.id;
+            const isSelected = selectedRide?.id === rider.id;
 
-              return (
-                <CustomMapMarker
-                  coordinate={rider.pickupLocation}
-                  key={index}
-                  onPress={handleMarkerPress}
-                  type={isSelected ? "riderAlt" : "rider"}
-                />
-              );
-            })}
-          {/* map marker for driver */}
-          <CustomMapMarker coordinate={currentLocation} type="driverAlt" />
+            return (
+              <CustomMapMarker
+                coordinate={rider.pickupLocation}
+                key={index}
+                onPress={handleMarkerPress}
+                type={isSelected ? "riderAlt" : "rider"}
+              />
+            );
+          })}
+        {/* map marker for driver */}
+        {currentLocation && <CustomMapMarker coordinate={currentLocation} type="driverAlt" />}
 
-          {/* map directions for driver and rider pick up location */}
-          {currentLocation !== undefined && selectedRide && selectedRide.pickupLocation && (
-            <MapDirections destination={selectedRide.pickupLocation} origin={currentLocation} />
-          )}
+        {/* map directions for driver and rider pick up location */}
+        {currentLocation !== undefined && selectedRide && selectedRide.pickupLocation && (
+          <MapDirections destination={selectedRide.pickupLocation} origin={currentLocation} />
+        )}
 
-          {/* live marker to pick up location */}
-          {isTraveling && currentLocation && selectedRide && (
+        {/* live marker to pick up location */}
+        {isTraveling && currentLocation && selectedRide && <CustomMapMarker coordinate={selectedRide.pickupLocation} type="riderPickup" />}
+
+        {/* map marker and directions for rider pick up location and destination */}
+        {viewDetails && selectedRide && selectedRide.destination && selectedRide.pickupLocation && (
+          <>
             <CustomMapMarker coordinate={selectedRide.pickupLocation} type="riderPickup" />
-          )}
-
-          {/* map marker and directions for rider pick up location and destination */}
-          {viewDetails && selectedRide && selectedRide.destination && selectedRide.pickupLocation && (
-            <>
-              <CustomMapMarker coordinate={selectedRide.pickupLocation} type="riderPickup" />
-              <MapDirections destination={selectedRide.destination} origin={selectedRide.pickupLocation} />
-              <CustomMapMarker coordinate={selectedRide.destination} type="riderDestination" />
-            </>
-          )}
-        </CustomMap>
-      )}
+            <MapDirections destination={selectedRide.destination} origin={selectedRide.pickupLocation} />
+            <CustomMapMarker coordinate={selectedRide.destination} type="riderDestination" />
+          </>
+        )}
+      </CustomMap>
       <IconButton
         color={colorBlue._0}
         name="more"
@@ -287,7 +285,7 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
         )}
         <ErrorHandling
           error={error}
-          isFetching={isFetching}
+          isFetching={isFetching && !accepted}
           noNearby={rides !== undefined && rides.length === 0 && !isFetching && !accepted && !isTraveling}
           refetch={refetch}
         />

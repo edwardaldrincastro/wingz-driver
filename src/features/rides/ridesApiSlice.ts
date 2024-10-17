@@ -31,21 +31,7 @@ export const apiSlice = createApi({
         method: "PATCH",
         body: { status, driverId },
       }),
-      async onQueryStarted({ id, status }, { dispatch, queryFulfilled }) {
-        const patchResult = dispatch(
-          apiSlice.util.updateQueryData("fetchRides", {}, (draft) => {
-            const ride = draft.find((findRide) => findRide.id === id);
-            if (ride) {
-              ride.status = status;
-            }
-          }),
-        );
-        try {
-          await queryFulfilled;
-        } catch {
-          patchResult.undo();
-        }
-      },
+      invalidatesTags: ["Rides"],
     }),
   }),
 });
