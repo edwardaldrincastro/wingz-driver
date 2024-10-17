@@ -16,7 +16,3 @@ declare interface IconButtonProps {
   withDebounce?: boolean;
   withHover?: { color: import("react-native").ColorValue };
 }
-
-declare interface IconItemProps extends IconButtonProps {
-  title: string;
-}
