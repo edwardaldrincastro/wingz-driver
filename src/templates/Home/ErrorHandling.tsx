@@ -20,7 +20,7 @@ export const ErrorHandling: FunctionComponent<ErrorHandlingProps> = ({ error, is
   if (isFetching) {
     return (
       <BottomSheet>
-        <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>Getting nearby requests...</Text>
+        <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>{HOME.LABEL_GETTING_NEARBY}</Text>
       </BottomSheet>
     );
   }
@@ -29,7 +29,7 @@ export const ErrorHandling: FunctionComponent<ErrorHandlingProps> = ({ error, is
     return (
       <BottomSheet>
         <View style={rowCenterVertical}>
-          <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>Oops! Something went wrong.</Text>
+          <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>{HOME.LABEL_ERROR_REQUEST}</Text>
           <CustomFlexSpacer />
           <LinkText onPress={refetch} style={{ ...fs12BoldGray6, color: colorBlue._0 }} text={HOME.BUTTON_TRY} />
         </View>
@@ -41,7 +41,7 @@ export const ErrorHandling: FunctionComponent<ErrorHandlingProps> = ({ error, is
     return (
       <BottomSheet>
         <View style={rowCenterVertical}>
-          <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>No nearby requests.</Text>
+          <Text style={{ ...fs16MedBlack1, ...fsAlignCenter }}>{HOME.LABEL_NO_NEARBY}</Text>
           <CustomFlexSpacer />
           <LinkText onPress={refetch} style={{ ...fs12BoldGray6, color: colorBlue._0 }} text={HOME.BUTTON_TRY} />
         </View>

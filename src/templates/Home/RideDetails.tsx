@@ -71,7 +71,7 @@ export const RideDetails: FunctionComponent<RideDetailsProps> = ({
         ) : (
           <>
             <CustomSpacer space={sh24} />
-            <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={handleViewDetails} text="View Details" />
+            <RoundedButton buttonStyle={{ ...flexChild, width: undefined }} onPress={handleViewDetails} text={HOME.BUTTON_VIEW} />
           </>
         )}
       </>

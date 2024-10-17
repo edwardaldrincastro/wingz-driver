@@ -17,7 +17,7 @@ interface AcceptedRideProps {
 type RideCategory = "now" | "soon" | "future";
 
 export const AcceptedRide: FunctionComponent<AcceptedRideProps> = ({ data, handleLater, handleNow }: AcceptedRideProps) => {
-  const now = dayjs();
+  const now = dayjs("2024-10-16T00:00:00"); // i'm using a mock date and time to match the requests pickup time in the db
   const targetDate = dayjs(data.pickupTime);
 
   const diffInMinutes = targetDate.diff(now, "minute");
@@ -42,15 +42,17 @@ export const AcceptedRide: FunctionComponent<AcceptedRideProps> = ({ data, handl
     timeLeft += `${remainingMinutes} min${remainingMinutes > 1 ? "s" : ""}`;
   }
 
-  const readyToGo = category === "soon" ? "Ready to go now?" : "";
+  const readyToGo = category === "soon" ? HOME.LABEL_READY : "";
 
   let primaryButtonText = "Yes";
 
   if (category === "now") {
-    primaryButtonText = "Start Trip";
+    primaryButtonText = HOME.BUTTON_START;
   } else if (category === "future") {
-    primaryButtonText = "Got it";
+    primaryButtonText = HOME.BUTTON_GOT_IT;
   }
+
+  const distanceAway = "20 mins"; // this is the duration to travel to the destination, we can use GooglePlaces API to get this
 
   return (
     <BottomSheet>
@@ -61,12 +63,12 @@ export const AcceptedRide: FunctionComponent<AcceptedRideProps> = ({ data, handl
         <CustomSpacer space={sh24} />
         {category === "future" ? (
           <Text style={fs16RegBlack1}>
-            This ride is scheduled in <Text style={fs16BoldBlack2}>{timeLeft}</Text>. We'll send you a reminder as the time approaches.
+            {HOME.LABEL_ACCEPT_SCHEDULED} <Text style={fs16BoldBlack2}>{timeLeft}</Text>. {HOME.LABEL_ACCEPT_REMINDER}
           </Text>
         ) : (
           <Text style={fs16RegBlack1}>
-            This ride is scheduled in <Text style={fs16BoldBlack2}>{timeLeft}</Text>. You are
-            <Text style={fs16BoldBlack2}> 20 mins</Text> away from the pickup location. {readyToGo}
+            {HOME.LABEL_ACCEPT_SCHEDULED} <Text style={fs16BoldBlack2}>{timeLeft}</Text>. {HOME.LABEL_ACCEPT_YOU}
+            <Text style={fs16BoldBlack2}> {distanceAway}</Text> {HOME.LABEL_ACCEPT_AWAY} {readyToGo}
           </Text>
         )}
         <CustomSpacer space={sh24} />
