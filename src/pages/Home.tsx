@@ -41,12 +41,11 @@ const ASPECT_RATIO = screen.width / screen.height;
 const LATITUDE_DELTA = 0.04;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
+const DEFAULT_DELTA = { latitudeDelta: LATITUDE_DELTA, longitudeDelta: LONGITUDE_DELTA };
 const MOCK_PREVIOUS_LOCATION = { latitude: 14.5629, longitude: 121.0364 };
 const MOCK_CURRENT_LOCATION = { latitude: 14.541, longitude: 121.05 };
-const DEFAULT_DELTA = { latitudeDelta: LATITUDE_DELTA, longitudeDelta: LONGITUDE_DELTA };
 
 export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomePageProps) => {
-  // Notes: use Location Service API from Google to get FindPickupPointsForPlace
   const { bottom, top } = useSafeAreaInsets();
   const bottomSpace = bottom > 0 ? bottom : 16;
   const topSpace = top > 0 ? top : 16;
@@ -73,7 +72,7 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
   const [updateRideStatus] = useUpdateRideStatusMutation();
 
   // region is being set through moveLocation ref
-  const [region] = useState<Region>({ ...MOCK_PREVIOUS_LOCATION, ...DEFAULT_DELTA }); // when the map opens, it will open to the last location of the driver
+  const [region] = useState<Region>({ ...MOCK_PREVIOUS_LOCATION, ...DEFAULT_DELTA });
   const mapRef = useRef<MapView | null>(null);
 
   const [viewDetails, setViewDetails] = useState<boolean>(false);

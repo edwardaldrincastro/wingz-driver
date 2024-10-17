@@ -1,7 +1,7 @@
 import React, { Fragment, FunctionComponent, RefObject, useState } from "react";
 import { NativeSyntheticEvent, Text, TextInput, TextInputFocusEventData, TextInputProps, TextStyle, View, ViewStyle } from "react-native";
 
-import { PoppinsMedium } from "../../constants";
+import { GalanoClassicMedium } from "../../constants";
 import { IcoMoon } from "../../icons";
 import {
   border,
@@ -125,7 +125,7 @@ export const CustomTextInput: FunctionComponent<CustomTextInputProps> = ({
   const inputStyle: TextStyle = {
     ...flexChild,
     color: disabled === true ? colorGreen._6 : colorGreen._3,
-    fontFamily: PoppinsMedium,
+    fontFamily: GalanoClassicMedium,
     fontSize: sh16,
     height: isFocused ? sh56 : sh55, // height is more than the input view size to adjust the keyboard avoiding view
     // paddingVertical: 1, // hotfix for iOS input wrapping with long text

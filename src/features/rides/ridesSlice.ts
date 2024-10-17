@@ -12,19 +12,17 @@ const initialState: RidesState = {
   error: null,
 };
 
-// Action to fetch addresses after the ride is selected
+// fetch addresses using Geocoder after the ride is selected
 export const fetchAddresses = createAsyncThunk("rides/fetchAddresses", async (ride: Ride, { rejectWithValue }) => {
   try {
     let destinationAddress: string | undefined;
     let pickupAddress: string | undefined;
 
-    // Fetch address if pickupLocation doesn't have one
     if (!ride.pickupLocation.address) {
       const pickupResponse = await Geocoder.from(ride.pickupLocation.latitude, ride.pickupLocation.longitude);
       pickupAddress = pickupResponse.results[0]?.formatted_address;
     }
 
-    // Fetch address if destination doesn't have one
     if (!ride.destination.address) {
       const destinationResponse = await Geocoder.from(ride.destination.latitude, ride.destination.longitude);
       destinationAddress = destinationResponse.results[0]?.formatted_address;
@@ -41,11 +39,12 @@ export const ridesSlice = createSlice({
   name: "rides",
   initialState,
   reducers: {
-    // This action immediately sets the selected ride without fetching addresses
     rideSelected: (state, action: PayloadAction<Ride>) => {
+      // I know this is bad in previous Redux implementation but in RTK, you can mutate the state directly because of Immer
       state.selected = action.payload;
     },
     resetSelectedRide: (state) => {
+      // I know this is bad in previous Redux implementation but in RTK, you can mutate the state directly because of Immer
       state.selected = undefined;
     },
   },
@@ -53,6 +52,7 @@ export const ridesSlice = createSlice({
     builder
       .addCase(fetchAddresses.fulfilled, (state, action) => {
         if (state.selected) {
+          // I know this is bad in previous Redux implementation but in RTK, you can mutate the state directly because of Immer
           state.selected.destination.address = action.payload.destinationAddress;
           state.selected.pickupLocation.address = action.payload.pickupAddress;
         }
