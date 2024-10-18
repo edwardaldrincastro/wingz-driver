@@ -8,7 +8,7 @@ interface FetchRidesParams {
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000", // change the baseUrl to your IP if you want to use it in your physical device. e.g http://192.168.68.107:3001
+    baseUrl: "http://localhost:3000", // change the baseUrl to your IP if you want to use it in your local device. e.g http://192.168.68.107:3001
   }),
   tagTypes: ["Rides", "Accepted Rides"],
   endpoints: (builder) => ({
