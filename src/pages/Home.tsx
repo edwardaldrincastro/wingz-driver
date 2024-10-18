@@ -32,7 +32,7 @@ import {
   sw44,
   sw48,
 } from "../styles";
-import { AcceptedRide, ErrorHandling, OngoingRide, RideDetails } from "../templates/Home";
+import { AcceptedRide, ErrorHandling, OngoingRide, RideDetails } from "../templates";
 
 const screen = Dimensions.get("window");
 const ASPECT_RATIO = screen.width / screen.height;
@@ -56,8 +56,8 @@ export const HomePage: FunctionComponent<HomePageProps> = ({ navigation }: HomeP
 
   const {
     data: rides,
-    isFetching,
     error,
+    isFetching,
     refetch,
   } = useFetchRidesQuery(
     {

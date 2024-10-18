@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { driverSlice, ridesSlice } from "../features";
-import { apiSlice } from "../features/rides/ridesApiSlice";
+import { apiSlice, driverSlice, ridesSlice } from "../features";
 
 export const store = configureStore({
   reducer: {
